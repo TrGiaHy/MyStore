@@ -1,0 +1,817 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\mystore.web\\apicontrollers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\mystore.web\\mystore.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\mystore.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\mystore.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\config\\configservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\config\\configservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\shoppingcart\\shoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\shoppingcart\\shoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\shoppingcart\\ishoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\shoppingcart\\ishoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\productimage\\productimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\productimage\\productimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\productimage\\iproductimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\productimage\\iproductimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\product\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\product\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\product\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\product\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\orderitem\\orderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\orderitem\\orderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\orderitem\\iorderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\orderitem\\iorderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\order\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\order\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\order\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\order\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\categoryservices\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\categoryservices\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\categoryservices\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\categoryservices\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\cartitem\\cartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\cartitem\\cartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\services\\cartitem\\icartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\services\\cartitem\\icartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\config\\configrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\config\\configrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\product\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\product\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\product\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\product\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\cartitem\\cartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\cartitem\\cartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\dbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\dbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\shoppingcarts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\shoppingcarts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\productimages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\productimages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\model\\cartitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55DAEAD7-B7D6-4CD6-90E6-515C4C50809F}|Model\\Model.csproj|solutionrelative:model\\cartitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\bsinesslogic\\bsinesslogic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BsinessLogic.csproj|solutionrelative:bsinesslogic\\bsinesslogic.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\shoppingcart\\ishoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\shoppingcart\\ishoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\shoppingcart\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\shoppingcart\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\productimage\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\productimage\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\productimage\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\productimage\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\orderitem\\orderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\orderitem\\orderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\orderitem\\iorderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\orderitem\\iorderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\order\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\order\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\order\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\order\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\category\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\category\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\category\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\category\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\otherreposity\\cartitem\\icartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\otherreposity\\cartitem\\icartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\baserepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\baserepository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|c:\\users\\senetuser\\downloads\\mystore\\mystore\\repository\\baserepository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\baserepository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\UserController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\UserController.cs",
+              "RelativeToolTip": "MyStore.Web\\APIControllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T10:28:10.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyStore.Web",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\MyStore.Web\\MyStore.Web.csproj",
+              "RelativeDocumentMoniker": "MyStore.Web\\MyStore.Web.csproj",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\MyStore.Web\\MyStore.Web.csproj",
+              "RelativeToolTip": "MyStore.Web\\MyStore.Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-09T10:26:04.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\MyStore.Web\\Program.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\MyStore.Web\\Program.cs",
+              "RelativeToolTip": "MyStore.Web\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T10:25:26.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IOrderItemService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\OrderItem\\IOrderItemService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\OrderItem\\IOrderItemService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\OrderItem\\IOrderItemService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\OrderItem\\IOrderItemService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:22:34.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderItemService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\OrderItem\\OrderItemService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\OrderItem\\OrderItemService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\OrderItem\\OrderItemService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\OrderItem\\OrderItemService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:22:27.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\Product\\ProductService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\Product\\ProductService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\Product\\ProductService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\Product\\ProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:22:50.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\Product\\IProductService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\Product\\IProductService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\Product\\IProductService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\Product\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:23:03.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IProductImageService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\ProductImage\\IProductImageService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\ProductImage\\IProductImageService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\ProductImage\\IProductImageService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\ProductImage\\IProductImageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:23:25.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductImageService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\ProductImage\\ProductImageService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\ProductImage\\ProductImageService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\ProductImage\\ProductImageService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\ProductImage\\ProductImageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:23:16.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IShoppingCartService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\ShoppingCart\\IShoppingCartService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\ShoppingCart\\IShoppingCartService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\ShoppingCart\\IShoppingCartService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\ShoppingCart\\IShoppingCartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:23:45.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShoppingCartService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\ShoppingCart\\ShoppingCartService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\ShoppingCart\\ShoppingCartService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\ShoppingCart\\ShoppingCartService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\ShoppingCart\\ShoppingCartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:23:37.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConfigServices.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Config\\ConfigServices.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Config\\ConfigServices.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Config\\ConfigServices.cs",
+              "RelativeToolTip": "BsinessLogic\\Config\\ConfigServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:02:21.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\Order\\OrderService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\Order\\OrderService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\Order\\OrderService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\Order\\OrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:22:06.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\Order\\IOrderService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\Order\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\Order\\IOrderService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\Order\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:22:14.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\CategoryServices\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\CategoryServices\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\CategoryServices\\ICategoryService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\CategoryServices\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:21:46.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\CategoryServices\\CategoryService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\CategoryServices\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\CategoryServices\\CategoryService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\CategoryServices\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:21:40.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CartItemService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\CartItem\\CartItemService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\CartItem\\CartItemService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\CartItem\\CartItemService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\CartItem\\CartItemService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:19:47.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ICartItemService.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\CartItem\\ICartItemService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\CartItem\\ICartItemService.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Services\\CartItem\\ICartItemService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\CartItem\\ICartItemService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:20:32.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ConfigRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Config\\ConfigRepository.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Config\\ConfigRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\Config\\ConfigRepository.cs",
+              "RelativeToolTip": "BsinessLogic\\Config\\ConfigRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T09:02:29.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\AppUser.cs",
+              "RelativeDocumentMoniker": "Model\\AppUser.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\AppUser.cs",
+              "RelativeToolTip": "Model\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:34:10.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Product\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\Product\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Product\\ProductRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\Product\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:29:35.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Product\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\Product\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Product\\IProductRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\Product\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:29:42.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OrderItems.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\OrderItems.cs",
+              "RelativeDocumentMoniker": "Model\\OrderItems.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\OrderItems.cs",
+              "RelativeToolTip": "Model\\OrderItems.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:52:14.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Categories.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Categories.cs",
+              "RelativeDocumentMoniker": "Model\\Categories.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Categories.cs",
+              "RelativeToolTip": "Model\\Categories.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:38:37.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CartItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\CartItem\\CartItemRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\CartItem\\CartItemRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\CartItem\\CartItemRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\CartItem\\CartItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:25:14.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\DBContext\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Model\\DBContext\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\DBContext\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Model\\DBContext\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAwBQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:55:14.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Model.csproj",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Model.csproj",
+              "RelativeDocumentMoniker": "Model\\Model.csproj",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Model.csproj",
+              "RelativeToolTip": "Model\\Model.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-09T06:29:34.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ShoppingCarts.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\ShoppingCarts.cs",
+              "RelativeDocumentMoniker": "Model\\ShoppingCarts.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\ShoppingCarts.cs",
+              "RelativeToolTip": "Model\\ShoppingCarts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:43:59.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ProductImages.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\ProductImages.cs",
+              "RelativeDocumentMoniker": "Model\\ProductImages.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\ProductImages.cs",
+              "RelativeToolTip": "Model\\ProductImages.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:42:46.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Products.cs",
+              "RelativeDocumentMoniker": "Model\\Products.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Products.cs",
+              "RelativeToolTip": "Model\\Products.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwvxkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:36:37.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Orders.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Orders.cs",
+              "RelativeDocumentMoniker": "Model\\Orders.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Orders.cs",
+              "RelativeToolTip": "Model\\Orders.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:47:15.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CartItems.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\CartItems.cs",
+              "RelativeDocumentMoniker": "Model\\CartItems.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\CartItems.cs",
+              "RelativeToolTip": "Model\\CartItems.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T06:49:31.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "BsinessLogic.csproj",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\BsinessLogic.csproj",
+              "RelativeDocumentMoniker": "BsinessLogic\\BsinessLogic.csproj",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\BsinessLogic\\BsinessLogic.csproj",
+              "RelativeToolTip": "BsinessLogic\\BsinessLogic.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-09T08:54:15.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Repository.csproj",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\Repository.csproj",
+              "RelativeDocumentMoniker": "Repository\\Repository.csproj",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\Repository.csproj",
+              "RelativeToolTip": "Repository\\Repository.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-09T08:10:11.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "IProductImageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\ProductImage\\IProductImageRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\ProductImage\\IProductImageRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\ProductImage\\IProductImageRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\ProductImage\\IProductImageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:30:05.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ProductImageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\ProductImage\\ProductImageRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\ProductImage\\ProductImageRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\ProductImage\\ProductImageRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\ProductImage\\ProductImageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:29:54.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IShoppingCartRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\ShoppingCart\\IShoppingCartRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\ShoppingCart\\IShoppingCartRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\ShoppingCart\\IShoppingCartRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\ShoppingCart\\IShoppingCartRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:30:22.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ShoppingCartRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\ShoppingCart\\ShoppingCartRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\ShoppingCart\\ShoppingCartRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\ShoppingCart\\ShoppingCartRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\ShoppingCart\\ShoppingCartRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:30:16.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "OrderItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\OrderItem\\OrderItemRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\OrderItem\\OrderItemRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\OrderItem\\OrderItemRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\OrderItem\\OrderItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:29:12.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "IOrderItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\OrderItem\\IOrderItemRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\OrderItem\\IOrderItemRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\OrderItem\\IOrderItemRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\OrderItem\\IOrderItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:29:21.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Order\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\Order\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Order\\OrderRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\Order\\OrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:28:54.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Order\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\Order\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Order\\IOrderRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\Order\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:29:00.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Category\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\Category\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Category\\CategoryRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\Category\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:25:52.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Category\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\Category\\ICategoryRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\Category\\ICategoryRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\Category\\ICategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:25:58.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "ICartItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\CartItem\\ICartItemRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\OtherReposity\\CartItem\\ICartItemRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\OtherReposity\\CartItem\\ICartItemRepository.cs",
+              "RelativeToolTip": "Repository\\OtherReposity\\CartItem\\ICartItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:25:09.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\BaseRepository\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\BaseRepository\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\BaseRepository\\IBaseRepository.cs",
+              "RelativeToolTip": "Repository\\BaseRepository\\IBaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:11:44.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\BaseRepository\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\BaseRepository\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\BaseRepository\\BaseRepository.cs",
+              "RelativeToolTip": "Repository\\BaseRepository\\BaseRepository.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAcwCAAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T08:11:28.853Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
