@@ -2,6 +2,16 @@
  E-COMMERCE WEBSITE FEATURES
 ========================================
 
+/Controllers
+   ├── AuthController.cs
+   ├── ProductsController.cs
+   ├── CartController.cs
+   ├── OrdersController.cs
+   └── Admin
+        ├── AdminProductsController.cs
+        ├── AdminOrdersController.cs
+        └── AdminCustomersController.cs
+
 🛒 CUSTOMER FEATURES
 ----------------------------------------
 - Authentication

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model
 {
@@ -17,6 +12,7 @@ namespace Model
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public bool IsActive { get; set; } = true; //true = show, false = hide
 
         [ForeignKey("Category")]
         public Guid CategoryID { get; set; }

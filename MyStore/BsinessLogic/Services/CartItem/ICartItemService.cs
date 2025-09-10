@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 using Model;
 
-namespace BsinessLogic.Services.CartItem
+namespace BusinessLogic.Services.CartItem
 {
     public interface ICartItemService
     {
-       IQueryable<CartItems> GetAll();
+        IQueryable<CartItems> GetAll();
         CartItems GetById(Guid id);
         Task<CartItems> GetAsyncById(Guid id);
         CartItems Find(Expression<Func<CartItems, bool>> match);
@@ -27,5 +22,5 @@ namespace BsinessLogic.Services.CartItem
             Expression<Func<CartItems, bool>> filter = null,
             Func<IQueryable<CartItems>, IOrderedQueryable<CartItems>> orderBy = null,
             Func<IQueryable<CartItems>, Microsoft.EntityFrameworkCore.Query.IIncludableQueryable<CartItems, object>> includeProperties = null);
-    }   
+    }
 }

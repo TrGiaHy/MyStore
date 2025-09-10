@@ -13743,23 +13743,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SenetUser\\.nuget\\packages\\": {},
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\Repository.csproj",
+      "projectUniqueName": "D:\\MyStore\\MyStore\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\SenetUser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Repository\\obj\\",
+      "projectPath": "D:\\MyStore\\MyStore\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "D:\\MyStore\\MyStore\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\SenetUser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -13768,14 +13768,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\SenetUser\\Downloads\\MyStore\\MyStore\\Model\\Model.csproj"
+            "D:\\MyStore\\MyStore\\Model\\Model.csproj": {
+              "projectPath": "D:\\MyStore\\MyStore\\Model\\Model.csproj"
             }
           }
         }

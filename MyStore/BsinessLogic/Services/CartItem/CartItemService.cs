@@ -1,27 +1,18 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Cors.Infrastructure;
-using Microsoft.AspNetCore.Http;
+﻿using System.Linq.Expressions;
 using Model;
-using Newtonsoft.Json;
 using Repository.OtherReposity.CartItem;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BsinessLogic.Services.CartItem
+namespace BusinessLogic.Services.CartItem
 {
     public class CartItemService : ICartItemService
     {
         private readonly ICartItemRepository _repository;
-        private readonly IMapper _mapper;
+        //private readonly IMapper _mapper;
 
-        public CartItemService(ICartItemRepository cate, IMapper mapper)
+        public CartItemService(ICartItemRepository cate)
         {
             _repository = cate;
-            _mapper = mapper;
+            //_mapper = mapper;
         }
         public IQueryable<CartItems> GetAll() => _repository.GetAll();
 
