@@ -1,24 +1,18 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
 using Model;
 using Repository.OtherReposity.Order;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BsinessLogic.Services.Order
+namespace BusinessLogic.Services.Order
 {
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _repository;
-        private readonly IMapper _mapper;
+        //private readonly IMapper _mapper;
 
-        public OrderService(IOrderRepository cate, IMapper mapper)
+        public OrderService(IOrderRepository cate)
         {
             _repository = cate;
-            _mapper = mapper;
+            //_mapper = mapper;
         }
         public IQueryable<Orders> GetAll() => _repository.GetAll();
 

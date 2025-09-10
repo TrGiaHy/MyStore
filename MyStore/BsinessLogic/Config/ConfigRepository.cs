@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Model;
 using Repository.OtherReposity.CartItem;
 using Repository.OtherReposity.Category;
 using Repository.OtherReposity.Order;
@@ -7,14 +6,8 @@ using Repository.OtherReposity.OrderItem;
 using Repository.OtherReposity.Product;
 using Repository.OtherReposity.ProductImage;
 using Repository.OtherReposity.ShoppingCart;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
 
-namespace BsinessLogic.Config
+namespace BusinessLogic.Config
 {
     public static class ConfigRepository
     {

@@ -1,25 +1,19 @@
-﻿using AutoMapper;
-using BsinessLogic.Services.CategoryServices;
+﻿using System.Linq.Expressions;
+using BusinessLogic.Services.CategoryServices;
 using Model;
 using Repository.OtherReposity.Category;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BsinessLogic.Services.Category
+namespace BusinessLogic.Services.Category
 {
     public class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository _repository;
-        private readonly IMapper _mapper;
+        //private readonly IMapper _mapper;
 
-        public CategoryService(ICategoryRepository cate, IMapper mapper)
+        public CategoryService(ICategoryRepository cate)
         {
             _repository = cate;
-            _mapper = mapper;
+            //_mapper = mapper;
         }
         public IQueryable<Categories> GetAll() => _repository.GetAll();
 

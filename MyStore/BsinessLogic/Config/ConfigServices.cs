@@ -1,21 +1,14 @@
-﻿using BsinessLogic.Services.CartItem;
-using BsinessLogic.Services.Category;
-using BsinessLogic.Services.CategoryServices;
-using BsinessLogic.Services.Order;
-using BsinessLogic.Services.OrderItem;
-using BsinessLogic.Services.Product;
-using BsinessLogic.Services.ProductImage;
-using BsinessLogic.Services.ShoppingCart;
-using Microsoft.AspNetCore.Cors.Infrastructure;
+﻿using BusinessLogic.Services.CartItem;
+using BusinessLogic.Services.Category;
+using BusinessLogic.Services.CategoryServices;
+using BusinessLogic.Services.Order;
+using BusinessLogic.Services.OrderItem;
+using BusinessLogic.Services.Product;
+using BusinessLogic.Services.ProductImage;
+using BusinessLogic.Services.ShoppingCart;
 using Microsoft.Extensions.DependencyInjection;
-using Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BsinessLogic.Config
+namespace BusinessLogic.Config
 {
     public static class ConfigServices
     {
@@ -35,7 +28,7 @@ namespace BsinessLogic.Config
 
             services.AddScoped<IShoppingCartService, ShoppingCartService>();
 
-          
+
         }
     }
 }

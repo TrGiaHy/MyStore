@@ -1,24 +1,18 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
 using Model;
 using Repository.OtherReposity.ShoppingCart;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BsinessLogic.Services.ShoppingCart
+namespace BusinessLogic.Services.ShoppingCart
 {
     public class ShoppingCartService : IShoppingCartService
     {
         private readonly IShoppingCartRepository _repository;
-        private readonly IMapper _mapper;
+        //private readonly IMapper _mapper;
 
-        public ShoppingCartService(IShoppingCartRepository cate, IMapper mapper)
+        public ShoppingCartService(IShoppingCartRepository cate)
         {
             _repository = cate;
-            _mapper = mapper;
+            //_mapper = mapper;
         }
         public IQueryable<ShoppingCarts> GetAll() => _repository.GetAll();
 

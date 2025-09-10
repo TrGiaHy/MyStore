@@ -1,24 +1,18 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
 using Model;
 using Repository.OtherReposity.Product;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BsinessLogic.Services.Product
+namespace BusinessLogic.Services.Product
 {
     public class ProductService : IProductService
     {
         private readonly IProductRepository _repository;
-        private readonly IMapper _mapper;
+        //private readonly IMapper _mapper;
 
-        public ProductService(IProductRepository cate, IMapper mapper)
+        public ProductService(IProductRepository cate)
         {
             _repository = cate;
-            _mapper = mapper;
+            //_mapper = mapper;
         }
         public IQueryable<Products> GetAll() => _repository.GetAll();
 

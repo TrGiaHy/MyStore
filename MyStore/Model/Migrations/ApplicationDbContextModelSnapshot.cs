@@ -47,6 +47,20 @@ namespace Model.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("Roles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "de4a0d96-3458-4e43-a1f5-9f83d5047edc",
+                            Name = "Customer",
+                            NormalizedName = "CUSTOMER"
+                        },
+                        new
+                        {
+                            Id = "71a6ab78-1dde-4805-b395-1634d2970edb",
+                            Name = "Seller",
+                            NormalizedName = "SELLER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -134,6 +148,18 @@ namespace Model.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("UserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "f7b29f89-ca52-427d-a9f9-85e9b6225485",
+                            RoleId = "de4a0d96-3458-4e43-a1f5-9f83d5047edc"
+                        },
+                        new
+                        {
+                            UserId = "c8460b0b-1611-4ca3-80e3-9d92fba82678",
+                            RoleId = "71a6ab78-1dde-4805-b395-1634d2970edb"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -164,7 +190,6 @@ namespace Model.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -179,7 +204,6 @@ namespace Model.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -229,9 +253,68 @@ namespace Model.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("Users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "f7b29f89-ca52-427d-a9f9-85e9b6225485",
+                            AccessFailedCount = 0,
+                            Address = "123 Đường ABC, Quận 1, TP.HCM",
+                            ConcurrencyStamp = "13c83081-4b10-4b4f-abca-3da28a1a7350",
+                            Email = "customer1@email.com",
+                            EmailConfirmed = true,
+                            FullName = "Nguyen Van A",
+                            IsActive = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "CUSTOMER1@EMAIL.COM",
+                            NormalizedUserName = "CUSTOMER1",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJkJmSGVpGbzauMCzEjawwAnNmww7kVGWN6nmhaqmsbPQeKxt5e6dvKHgY/dPy0g6A==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "480caaf1-e4bb-4943-887d-fb4e7ec5f72a",
+                            TwoFactorEnabled = false,
+                            UserName = "customer1"
+                        },
+                        new
+                        {
+                            Id = "c8460b0b-1611-4ca3-80e3-9d92fba82678",
+                            AccessFailedCount = 0,
+                            Address = "456 Đường XYZ, Quận 3, TP.HCM",
+                            ConcurrencyStamp = "dffe9a6c-d5cc-4f31-95bf-22a7d82b7298",
+                            Email = "seller1@email.com",
+                            EmailConfirmed = true,
+                            FullName = "Tran Thi B",
+                            IsActive = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "SELLER1@EMAIL.COM",
+                            NormalizedUserName = "SELLER1",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPNMIO531/thFxJ2rMUSa2rEgZaGm2kG5ZOvYeJ/UATntCECmOX6Wddtktxrt0Sjog==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "2c0f2d36-de70-4f04-b2bf-683612ab40ba",
+                            TwoFactorEnabled = false,
+                            UserName = "seller1"
+                        },
+                        new
+                        {
+                            Id = "04d4c170-118c-4d9e-b8c6-aea31fdcf6e0",
+                            AccessFailedCount = 0,
+                            Address = "456 Đường XYZ, Quận 3, TP.HCM",
+                            ConcurrencyStamp = "b4de819a-bd9e-4584-8be8-9aeeecf8d9c8",
+                            Email = "giahuy@email.com",
+                            EmailConfirmed = true,
+                            FullName = "Tran Gia Huy",
+                            IsActive = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "GIAHUY@EMAIL.COM",
+                            NormalizedUserName = "GIAHUY",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFBP9dsIsExOaGmMWipBl2PKWBzqScEOIWqgPL2NaXJ4EDwdUlBKM8HKYBPFMilTyA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "1b9f1ed5-659c-4bc3-b908-41a5da8a3912",
+                            TwoFactorEnabled = false,
+                            UserName = "giahuy"
+                        });
                 });
 
-            modelBuilder.Entity("Model.CartItem", b =>
+            modelBuilder.Entity("Model.CartItems", b =>
                 {
                     b.Property<Guid>("CartItemId")
                         .ValueGeneratedOnAdd()
@@ -255,7 +338,7 @@ namespace Model.Migrations
                     b.ToTable("CartItems");
                 });
 
-            modelBuilder.Entity("Model.Category", b =>
+            modelBuilder.Entity("Model.Categories", b =>
                 {
                     b.Property<Guid>("CategoryId")
                         .ValueGeneratedOnAdd()
@@ -275,9 +358,52 @@ namespace Model.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = new Guid("172c4cb5-cdc3-4025-b78d-9640e59d1179"),
+                            Description = "Các loại điện thoại thông minh",
+                            IsActive = true,
+                            Name = "Điện thoại"
+                        },
+                        new
+                        {
+                            CategoryId = new Guid("e0b2001f-3e04-47ef-af42-3ce2867edc71"),
+                            Description = "Máy tính xách tay các loại",
+                            IsActive = true,
+                            Name = "Laptop"
+                        });
                 });
 
-            modelBuilder.Entity("Model.Order", b =>
+            modelBuilder.Entity("Model.OrderItems", b =>
+                {
+                    b.Property<Guid>("OrderItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("OrderItemId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderItems");
+                });
+
+            modelBuilder.Entity("Model.Orders", b =>
                 {
                     b.Property<Guid>("OrderId")
                         .ValueGeneratedOnAdd()
@@ -309,67 +435,7 @@ namespace Model.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Model.OrderItem", b =>
-                {
-                    b.Property<Guid>("OrderItemId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("OrderItemId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("OrderItems");
-                });
-
-            modelBuilder.Entity("Model.Product", b =>
-                {
-                    b.Property<Guid>("ProductId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CategoryID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("StockQuantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProductId");
-
-                    b.HasIndex("CategoryID");
-
-                    b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("Model.ProductImage", b =>
+            modelBuilder.Entity("Model.ProductImages", b =>
                 {
                     b.Property<Guid>("ProductImageID")
                         .ValueGeneratedOnAdd()
@@ -386,10 +452,70 @@ namespace Model.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("ProductImage");
+                    b.ToTable("ProductImages");
                 });
 
-            modelBuilder.Entity("Model.ShoppingCart", b =>
+            modelBuilder.Entity("Model.Products", b =>
+                {
+                    b.Property<Guid>("ProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CategoryID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("StockQuantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductId");
+
+                    b.HasIndex("CategoryID");
+
+                    b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = new Guid("89c0e36e-62b1-435e-a6fb-86784953e682"),
+                            CategoryID = new Guid("172c4cb5-cdc3-4025-b78d-9640e59d1179"),
+                            CreatedDate = new DateTime(2025, 9, 10, 23, 50, 25, 229, DateTimeKind.Local).AddTicks(8954),
+                            Description = "Điện thoại Apple mới nhất",
+                            IsActive = true,
+                            Name = "iPhone 15 Pro",
+                            Price = 29990000m,
+                            StockQuantity = 10
+                        },
+                        new
+                        {
+                            ProductId = new Guid("7b4630f6-cf03-4dcf-8a37-bc5816adc170"),
+                            CategoryID = new Guid("e0b2001f-3e04-47ef-af42-3ce2867edc71"),
+                            CreatedDate = new DateTime(2025, 9, 10, 23, 50, 25, 229, DateTimeKind.Local).AddTicks(8959),
+                            Description = "Laptop mỏng nhẹ cao cấp",
+                            IsActive = true,
+                            Name = "Dell XPS 13",
+                            Price = 25990000m,
+                            StockQuantity = 5
+                        });
+                });
+
+            modelBuilder.Entity("Model.ShoppingCarts", b =>
                 {
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
@@ -460,15 +586,15 @@ namespace Model.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Model.CartItem", b =>
+            modelBuilder.Entity("Model.CartItems", b =>
                 {
-                    b.HasOne("Model.ShoppingCart", "Cart")
+                    b.HasOne("Model.ShoppingCarts", "Cart")
                         .WithMany("CartItems")
                         .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("Model.Product", "Product")
+                    b.HasOne("Model.Products", "Product")
                         .WithMany("CartItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -479,26 +605,15 @@ namespace Model.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Model.Order", b =>
+            modelBuilder.Entity("Model.OrderItems", b =>
                 {
-                    b.HasOne("Model.AppUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Model.OrderItem", b =>
-                {
-                    b.HasOne("Model.Order", "Order")
+                    b.HasOne("Model.Orders", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("Model.Product", "Product")
+                    b.HasOne("Model.Products", "Product")
                         .WithMany("OrderItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -509,20 +624,20 @@ namespace Model.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Model.Product", b =>
+            modelBuilder.Entity("Model.Orders", b =>
                 {
-                    b.HasOne("Model.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                    b.HasOne("Model.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Model.ProductImage", b =>
+            modelBuilder.Entity("Model.ProductImages", b =>
                 {
-                    b.HasOne("Model.Product", "Product")
+                    b.HasOne("Model.Products", "Product")
                         .WithMany("ProductImages")
                         .HasForeignKey("ProductID")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -531,7 +646,18 @@ namespace Model.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Model.ShoppingCart", b =>
+            modelBuilder.Entity("Model.Products", b =>
+                {
+                    b.HasOne("Model.Categories", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Model.ShoppingCarts", b =>
                 {
                     b.HasOne("Model.AppUser", "AppUser")
                         .WithMany()
@@ -542,17 +668,17 @@ namespace Model.Migrations
                     b.Navigation("AppUser");
                 });
 
-            modelBuilder.Entity("Model.Category", b =>
+            modelBuilder.Entity("Model.Categories", b =>
                 {
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("Model.Order", b =>
+            modelBuilder.Entity("Model.Orders", b =>
                 {
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("Model.Product", b =>
+            modelBuilder.Entity("Model.Products", b =>
                 {
                     b.Navigation("CartItems");
 
@@ -561,7 +687,7 @@ namespace Model.Migrations
                     b.Navigation("ProductImages");
                 });
 
-            modelBuilder.Entity("Model.ShoppingCart", b =>
+            modelBuilder.Entity("Model.ShoppingCarts", b =>
                 {
                     b.Navigation("CartItems");
                 });

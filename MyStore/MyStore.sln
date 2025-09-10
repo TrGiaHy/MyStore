@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BsinessLogic", "BsinessLogic\BsinessLogic.csproj", "{C018BF65-398A-447F-B78A-1075FFD16B71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BsinessLogic\BusinessLogic.csproj", "{C018BF65-398A-447F-B78A-1075FFD16B71}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStore.Web", "MyStore.Web\MyStore.Web.csproj", "{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}"
 EndProject
