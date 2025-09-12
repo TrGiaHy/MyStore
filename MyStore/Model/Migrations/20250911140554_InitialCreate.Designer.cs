@@ -12,7 +12,7 @@ using Model.DBContext;
 namespace Model.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250910165025_InitialCreate")]
+    [Migration("20250911140554_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -54,13 +54,13 @@ namespace Model.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "de4a0d96-3458-4e43-a1f5-9f83d5047edc",
+                            Id = "e1e52815-268b-453b-90c2-168f6e1abdfc",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         },
                         new
                         {
-                            Id = "71a6ab78-1dde-4805-b395-1634d2970edb",
+                            Id = "ebbf08ae-8e9e-49fd-81e3-37c346a3999d",
                             Name = "Seller",
                             NormalizedName = "SELLER"
                         });
@@ -155,13 +155,13 @@ namespace Model.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "f7b29f89-ca52-427d-a9f9-85e9b6225485",
-                            RoleId = "de4a0d96-3458-4e43-a1f5-9f83d5047edc"
+                            UserId = "e3c10d51-9275-4531-a24d-3125390dd130",
+                            RoleId = "e1e52815-268b-453b-90c2-168f6e1abdfc"
                         },
                         new
                         {
-                            UserId = "c8460b0b-1611-4ca3-80e3-9d92fba82678",
-                            RoleId = "71a6ab78-1dde-4805-b395-1634d2970edb"
+                            UserId = "3dc28245-3819-49a1-aa39-c9ef658d93cb",
+                            RoleId = "ebbf08ae-8e9e-49fd-81e3-37c346a3999d"
                         });
                 });
 
@@ -260,10 +260,10 @@ namespace Model.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f7b29f89-ca52-427d-a9f9-85e9b6225485",
+                            Id = "e3c10d51-9275-4531-a24d-3125390dd130",
                             AccessFailedCount = 0,
                             Address = "123 Đường ABC, Quận 1, TP.HCM",
-                            ConcurrencyStamp = "13c83081-4b10-4b4f-abca-3da28a1a7350",
+                            ConcurrencyStamp = "18766dd7-cd44-4ac8-9e2b-755248ea9a14",
                             Email = "customer1@email.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Van A",
@@ -271,18 +271,18 @@ namespace Model.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER1@EMAIL.COM",
                             NormalizedUserName = "CUSTOMER1",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJkJmSGVpGbzauMCzEjawwAnNmww7kVGWN6nmhaqmsbPQeKxt5e6dvKHgY/dPy0g6A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIJRRpPsJyC+5bD8HXhVFwIcGdeFQd2cGh7kBCCpJv03RO0Utd1I9Qu612vabv5iYg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "480caaf1-e4bb-4943-887d-fb4e7ec5f72a",
+                            SecurityStamp = "20343a39-4631-450b-8a08-d916145dcd11",
                             TwoFactorEnabled = false,
                             UserName = "customer1"
                         },
                         new
                         {
-                            Id = "c8460b0b-1611-4ca3-80e3-9d92fba82678",
+                            Id = "3dc28245-3819-49a1-aa39-c9ef658d93cb",
                             AccessFailedCount = 0,
                             Address = "456 Đường XYZ, Quận 3, TP.HCM",
-                            ConcurrencyStamp = "dffe9a6c-d5cc-4f31-95bf-22a7d82b7298",
+                            ConcurrencyStamp = "16d00321-6848-4b9a-ab42-d7948637d5df",
                             Email = "seller1@email.com",
                             EmailConfirmed = true,
                             FullName = "Tran Thi B",
@@ -290,18 +290,18 @@ namespace Model.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SELLER1@EMAIL.COM",
                             NormalizedUserName = "SELLER1",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPNMIO531/thFxJ2rMUSa2rEgZaGm2kG5ZOvYeJ/UATntCECmOX6Wddtktxrt0Sjog==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFkXtNBu8MC2BS82Mo17kJOsBdyH7cYNAtCQb7v3rb/GHdXcJCLr1arIBhl3IbfxIw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2c0f2d36-de70-4f04-b2bf-683612ab40ba",
+                            SecurityStamp = "02f2d064-c899-48a6-87e9-97711fcd7028",
                             TwoFactorEnabled = false,
                             UserName = "seller1"
                         },
                         new
                         {
-                            Id = "04d4c170-118c-4d9e-b8c6-aea31fdcf6e0",
+                            Id = "96c5b7ee-e582-44d8-87e3-c8c800c9a512",
                             AccessFailedCount = 0,
                             Address = "456 Đường XYZ, Quận 3, TP.HCM",
-                            ConcurrencyStamp = "b4de819a-bd9e-4584-8be8-9aeeecf8d9c8",
+                            ConcurrencyStamp = "11fdc98c-ab80-4a9b-ba02-c54ed3c07e92",
                             Email = "giahuy@email.com",
                             EmailConfirmed = true,
                             FullName = "Tran Gia Huy",
@@ -309,9 +309,9 @@ namespace Model.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "GIAHUY@EMAIL.COM",
                             NormalizedUserName = "GIAHUY",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFBP9dsIsExOaGmMWipBl2PKWBzqScEOIWqgPL2NaXJ4EDwdUlBKM8HKYBPFMilTyA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAED7c4eMjSyXYTIe8jSJ8Rwvy2y6RE6tYKDbQ1f3etJamJ8S0dqaQM6NkvcMhZc5gmQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1b9f1ed5-659c-4bc3-b908-41a5da8a3912",
+                            SecurityStamp = "c8c3ddaa-70ce-4644-bf47-3dd06bd6e987",
                             TwoFactorEnabled = false,
                             UserName = "giahuy"
                         });
@@ -365,14 +365,14 @@ namespace Model.Migrations
                     b.HasData(
                         new
                         {
-                            CategoryId = new Guid("172c4cb5-cdc3-4025-b78d-9640e59d1179"),
+                            CategoryId = new Guid("6ff042eb-093a-40ea-8fea-440572d3a634"),
                             Description = "Các loại điện thoại thông minh",
                             IsActive = true,
                             Name = "Điện thoại"
                         },
                         new
                         {
-                            CategoryId = new Guid("e0b2001f-3e04-47ef-af42-3ce2867edc71"),
+                            CategoryId = new Guid("01a9bd0c-7d21-45a9-979a-a7501ba67dab"),
                             Description = "Máy tính xách tay các loại",
                             IsActive = true,
                             Name = "Laptop"
@@ -496,9 +496,9 @@ namespace Model.Migrations
                     b.HasData(
                         new
                         {
-                            ProductId = new Guid("89c0e36e-62b1-435e-a6fb-86784953e682"),
-                            CategoryID = new Guid("172c4cb5-cdc3-4025-b78d-9640e59d1179"),
-                            CreatedDate = new DateTime(2025, 9, 10, 23, 50, 25, 229, DateTimeKind.Local).AddTicks(8954),
+                            ProductId = new Guid("db409122-f2a3-4951-b561-c7afe89bfff4"),
+                            CategoryID = new Guid("6ff042eb-093a-40ea-8fea-440572d3a634"),
+                            CreatedDate = new DateTime(2025, 9, 11, 21, 5, 53, 866, DateTimeKind.Local).AddTicks(5604),
                             Description = "Điện thoại Apple mới nhất",
                             IsActive = true,
                             Name = "iPhone 15 Pro",
@@ -507,9 +507,9 @@ namespace Model.Migrations
                         },
                         new
                         {
-                            ProductId = new Guid("7b4630f6-cf03-4dcf-8a37-bc5816adc170"),
-                            CategoryID = new Guid("e0b2001f-3e04-47ef-af42-3ce2867edc71"),
-                            CreatedDate = new DateTime(2025, 9, 10, 23, 50, 25, 229, DateTimeKind.Local).AddTicks(8959),
+                            ProductId = new Guid("ff969e75-dbb9-4445-8d2f-405b3d1f236d"),
+                            CategoryID = new Guid("01a9bd0c-7d21-45a9-979a-a7501ba67dab"),
+                            CreatedDate = new DateTime(2025, 9, 11, 21, 5, 53, 866, DateTimeKind.Local).AddTicks(5607),
                             Description = "Laptop mỏng nhẹ cao cấp",
                             IsActive = true,
                             Name = "Dell XPS 13",
@@ -523,9 +523,6 @@ namespace Model.Migrations
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
 
                     b.Property<string>("UserID")
                         .IsRequired()

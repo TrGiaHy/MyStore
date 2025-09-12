@@ -33,7 +33,7 @@ namespace BusinessLogic.Services.OrderItem
         public async Task DeleteAsync(Guid id) => await _repository.DeleteAsync(id);
 
         public async Task<bool> ExistsAsync(Guid id) => await _repository.ExistsAsync(id);
-
+        public async Task<int> SaveChangesAsync() => await _repository.SaveChangesAsync();
         public int Count() => _repository.Count();
 
         public async Task<int> CountAsync() => await _repository.CountAsync();

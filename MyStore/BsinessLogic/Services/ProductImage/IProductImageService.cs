@@ -15,6 +15,7 @@ namespace BusinessLogic.Services.ProductImage
         Task DeleteAsync(ProductImages entity);
         Task DeleteAsync(Guid id);
         Task<bool> ExistsAsync(Guid id);
+        Task<int> SaveChangesAsync();
         int Count();
         Task<int> CountAsync();
         Task<IEnumerable<ProductImages>> ListAsync();

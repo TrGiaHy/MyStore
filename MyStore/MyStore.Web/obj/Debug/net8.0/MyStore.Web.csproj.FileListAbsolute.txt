@@ -574,3 +574,4 @@ D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\MyStore.Web.genruntimeconfig.cac
 D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\ref\MyStore.Web.dll
 D:\MyStore\MyStore\MyStore.Web\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll
 D:\MyStore\MyStore\MyStore.Web\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\MyStore\MyStore\MyStore.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

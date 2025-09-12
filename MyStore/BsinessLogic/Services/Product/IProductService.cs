@@ -15,6 +15,7 @@ namespace BusinessLogic.Services.Product
         Task DeleteAsync(Products entity);
         Task DeleteAsync(Guid id);
         Task<bool> ExistsAsync(Guid id);
+        Task<int> SaveChangesAsync();
         int Count();
         Task<int> CountAsync();
         Task<IEnumerable<Products>> ListAsync();

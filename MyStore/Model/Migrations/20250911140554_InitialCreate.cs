@@ -140,7 +140,6 @@ namespace Model.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
                     UserID = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -311,8 +310,8 @@ namespace Model.Migrations
                 columns: new[] { "CategoryId", "Description", "IsActive", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("172c4cb5-cdc3-4025-b78d-9640e59d1179"), "Các loại điện thoại thông minh", true, "Điện thoại" },
-                    { new Guid("e0b2001f-3e04-47ef-af42-3ce2867edc71"), "Máy tính xách tay các loại", true, "Laptop" }
+                    { new Guid("01a9bd0c-7d21-45a9-979a-a7501ba67dab"), "Máy tính xách tay các loại", true, "Laptop" },
+                    { new Guid("6ff042eb-093a-40ea-8fea-440572d3a634"), "Các loại điện thoại thông minh", true, "Điện thoại" }
                 });
 
             migrationBuilder.InsertData(
@@ -320,8 +319,8 @@ namespace Model.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "71a6ab78-1dde-4805-b395-1634d2970edb", null, "Seller", "SELLER" },
-                    { "de4a0d96-3458-4e43-a1f5-9f83d5047edc", null, "Customer", "CUSTOMER" }
+                    { "e1e52815-268b-453b-90c2-168f6e1abdfc", null, "Customer", "CUSTOMER" },
+                    { "ebbf08ae-8e9e-49fd-81e3-37c346a3999d", null, "Seller", "SELLER" }
                 });
 
             migrationBuilder.InsertData(
@@ -329,9 +328,9 @@ namespace Model.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "Email", "EmailConfirmed", "FullName", "IsActive", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "04d4c170-118c-4d9e-b8c6-aea31fdcf6e0", 0, "456 Đường XYZ, Quận 3, TP.HCM", "b4de819a-bd9e-4584-8be8-9aeeecf8d9c8", "giahuy@email.com", true, "Tran Gia Huy", true, false, null, "GIAHUY@EMAIL.COM", "GIAHUY", "AQAAAAIAAYagAAAAEFBP9dsIsExOaGmMWipBl2PKWBzqScEOIWqgPL2NaXJ4EDwdUlBKM8HKYBPFMilTyA==", null, false, "1b9f1ed5-659c-4bc3-b908-41a5da8a3912", false, "giahuy" },
-                    { "c8460b0b-1611-4ca3-80e3-9d92fba82678", 0, "456 Đường XYZ, Quận 3, TP.HCM", "dffe9a6c-d5cc-4f31-95bf-22a7d82b7298", "seller1@email.com", true, "Tran Thi B", true, false, null, "SELLER1@EMAIL.COM", "SELLER1", "AQAAAAIAAYagAAAAEPNMIO531/thFxJ2rMUSa2rEgZaGm2kG5ZOvYeJ/UATntCECmOX6Wddtktxrt0Sjog==", null, false, "2c0f2d36-de70-4f04-b2bf-683612ab40ba", false, "seller1" },
-                    { "f7b29f89-ca52-427d-a9f9-85e9b6225485", 0, "123 Đường ABC, Quận 1, TP.HCM", "13c83081-4b10-4b4f-abca-3da28a1a7350", "customer1@email.com", true, "Nguyen Van A", true, false, null, "CUSTOMER1@EMAIL.COM", "CUSTOMER1", "AQAAAAIAAYagAAAAEJkJmSGVpGbzauMCzEjawwAnNmww7kVGWN6nmhaqmsbPQeKxt5e6dvKHgY/dPy0g6A==", null, false, "480caaf1-e4bb-4943-887d-fb4e7ec5f72a", false, "customer1" }
+                    { "3dc28245-3819-49a1-aa39-c9ef658d93cb", 0, "456 Đường XYZ, Quận 3, TP.HCM", "16d00321-6848-4b9a-ab42-d7948637d5df", "seller1@email.com", true, "Tran Thi B", true, false, null, "SELLER1@EMAIL.COM", "SELLER1", "AQAAAAIAAYagAAAAEFkXtNBu8MC2BS82Mo17kJOsBdyH7cYNAtCQb7v3rb/GHdXcJCLr1arIBhl3IbfxIw==", null, false, "02f2d064-c899-48a6-87e9-97711fcd7028", false, "seller1" },
+                    { "96c5b7ee-e582-44d8-87e3-c8c800c9a512", 0, "456 Đường XYZ, Quận 3, TP.HCM", "11fdc98c-ab80-4a9b-ba02-c54ed3c07e92", "giahuy@email.com", true, "Tran Gia Huy", true, false, null, "GIAHUY@EMAIL.COM", "GIAHUY", "AQAAAAIAAYagAAAAED7c4eMjSyXYTIe8jSJ8Rwvy2y6RE6tYKDbQ1f3etJamJ8S0dqaQM6NkvcMhZc5gmQ==", null, false, "c8c3ddaa-70ce-4644-bf47-3dd06bd6e987", false, "giahuy" },
+                    { "e3c10d51-9275-4531-a24d-3125390dd130", 0, "123 Đường ABC, Quận 1, TP.HCM", "18766dd7-cd44-4ac8-9e2b-755248ea9a14", "customer1@email.com", true, "Nguyen Van A", true, false, null, "CUSTOMER1@EMAIL.COM", "CUSTOMER1", "AQAAAAIAAYagAAAAEIJRRpPsJyC+5bD8HXhVFwIcGdeFQd2cGh7kBCCpJv03RO0Utd1I9Qu612vabv5iYg==", null, false, "20343a39-4631-450b-8a08-d916145dcd11", false, "customer1" }
                 });
 
             migrationBuilder.InsertData(
@@ -339,8 +338,8 @@ namespace Model.Migrations
                 columns: new[] { "ProductId", "CategoryID", "CreatedDate", "Description", "IsActive", "Name", "Price", "StockQuantity" },
                 values: new object[,]
                 {
-                    { new Guid("7b4630f6-cf03-4dcf-8a37-bc5816adc170"), new Guid("e0b2001f-3e04-47ef-af42-3ce2867edc71"), new DateTime(2025, 9, 10, 23, 50, 25, 229, DateTimeKind.Local).AddTicks(8959), "Laptop mỏng nhẹ cao cấp", true, "Dell XPS 13", 25990000m, 5 },
-                    { new Guid("89c0e36e-62b1-435e-a6fb-86784953e682"), new Guid("172c4cb5-cdc3-4025-b78d-9640e59d1179"), new DateTime(2025, 9, 10, 23, 50, 25, 229, DateTimeKind.Local).AddTicks(8954), "Điện thoại Apple mới nhất", true, "iPhone 15 Pro", 29990000m, 10 }
+                    { new Guid("db409122-f2a3-4951-b561-c7afe89bfff4"), new Guid("6ff042eb-093a-40ea-8fea-440572d3a634"), new DateTime(2025, 9, 11, 21, 5, 53, 866, DateTimeKind.Local).AddTicks(5604), "Điện thoại Apple mới nhất", true, "iPhone 15 Pro", 29990000m, 10 },
+                    { new Guid("ff969e75-dbb9-4445-8d2f-405b3d1f236d"), new Guid("01a9bd0c-7d21-45a9-979a-a7501ba67dab"), new DateTime(2025, 9, 11, 21, 5, 53, 866, DateTimeKind.Local).AddTicks(5607), "Laptop mỏng nhẹ cao cấp", true, "Dell XPS 13", 25990000m, 5 }
                 });
 
             migrationBuilder.InsertData(
@@ -348,8 +347,8 @@ namespace Model.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "71a6ab78-1dde-4805-b395-1634d2970edb", "c8460b0b-1611-4ca3-80e3-9d92fba82678" },
-                    { "de4a0d96-3458-4e43-a1f5-9f83d5047edc", "f7b29f89-ca52-427d-a9f9-85e9b6225485" }
+                    { "ebbf08ae-8e9e-49fd-81e3-37c346a3999d", "3dc28245-3819-49a1-aa39-c9ef658d93cb" },
+                    { "e1e52815-268b-453b-90c2-168f6e1abdfc", "e3c10d51-9275-4531-a24d-3125390dd130" }
                 });
 
             migrationBuilder.CreateIndex(
