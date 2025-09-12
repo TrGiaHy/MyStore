@@ -58,3 +58,6 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\swagger\custom-swagger.js
+wwwroot\uploads\6519fde6-aa54-4d8e-9d8c-4070b370faf7.jpg
+wwwroot\uploads\af7e9fd1-ac4f-4307-bcc1-1b485e2e3b15.jpg

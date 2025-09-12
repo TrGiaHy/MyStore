@@ -1,10 +1,10 @@
 ﻿using BusinessLogic.Config;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Model;
 using Model.DBContext;
-
+using MyStore.Web.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Kết nối DB
@@ -72,29 +72,23 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 //Add Authentication
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/Home/Login";
-        options.LogoutPath = "/Home/Logout";
-        options.AccessDeniedPath = "/Error/404";
-        options.ReturnUrlParameter = "ReturnUrl";
-        options.ExpireTimeSpan = TimeSpan.FromDays(14);
-        options.SlidingExpiration = true;
-    });
-
-
-// Swagger
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+builder.Services.AddAuthentication(options =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
-    {
-        Title = "MyStore API",
-        Version = "v1",
-        Description = "E-Commerce API for Customer & Seller"
-    });
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddCookie(options =>
+{
+    options.LoginPath = "/Home/Login";
+    options.LogoutPath = "/Home/Logout";
+    options.AccessDeniedPath = "/Error/404";
+    options.ExpireTimeSpan = TimeSpan.FromDays(14);
+    options.SlidingExpiration = true;
 });
+
+
+builder.Services.ConfigureJwtAuthentication(builder.Configuration);
+builder.Services.ConfigureSwagger();
 
 var app = builder.Build();
 
@@ -111,7 +105,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage(); // hiện lỗi chi tiết
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyStore API V1");
+        c.InjectJavascript("/swagger/custom-swagger.js"); // 👈 nạp file JS
+    });
 }
 
 app.UseHttpsRedirection();

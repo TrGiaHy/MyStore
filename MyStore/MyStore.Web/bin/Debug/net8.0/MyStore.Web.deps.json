@@ -12,6 +12,7 @@
           "BusinessLogic": "1.0.0",
           "CsvHelper": "33.1.0",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.11",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.0",
           "Microsoft.AspNetCore.Authentication.MicrosoftAccount": "8.0.11",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.5",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.5",
@@ -676,6 +677,17 @@
           "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll": {
             "assemblyVersion": "8.0.11.0",
             "fileVersion": "8.0.1124.52116"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.35.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51819"
           }
         }
       },
@@ -3537,6 +3549,13 @@
       "sha512": "sha512-XYjmQF9ggDnpXds7aH5CgW2SWVmubJ/F6NOnDwDseMYnEBZSwhstkY9qZszd6wsAhpW1HeT9yO9nZqFPRMiDAA==",
       "path": "microsoft.aspnetcore.authentication.google/8.0.11",
       "hashPath": "microsoft.aspnetcore.authentication.google.8.0.11.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q2suMVl1gO6rBJkV7rxm0F2sBufValm2RKxY3zoWN4y6cAufDJYmzpLWPKju3kKFJFKNgivWgoTw0dvf4W5QDQ==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.0",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.7.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.MicrosoftAccount/8.0.11": {
       "type": "package",

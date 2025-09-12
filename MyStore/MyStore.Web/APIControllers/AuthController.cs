@@ -65,28 +65,93 @@ namespace MyStore.Web.APIControllers
             }
         }
 
+        //[HttpPost("Login")]
+        //public async Task<IActionResult> Login([FromBody] LoginViewModel model)
+        //{
+        //    try
+        //    {
+        //        var user = await _userManager.FindByNameAsync(model.Username)
+        //                   ?? await _userManager.FindByEmailAsync(model.Username);
+
+        //        if (user == null)
+        //        {
+        //            return BadRequest(new { message = "Account does not exist" });
+        //        }
+        //        if (!user.IsActive)
+        //        {
+        //            return BadRequest(new { message = "Your account has been locked." });
+        //        }
+
+        //        var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
+        //        if (!result.Succeeded)
+        //        {
+        //            return Unauthorized(new { message = "Invalid password" });
+        //        }
+
+        //        // ✅ Tạo JWT token
+        //        var authClaims = new List<Claim>
+        //{
+        //    new Claim(ClaimTypes.NameIdentifier, user.Id),
+        //    new Claim(ClaimTypes.Name, user.UserName),
+        //    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+        //};
+
+        //        var authSigningKey = new SymmetricSecurityKey(
+        //            Encoding.UTF8.GetBytes("MySuperUltraStrongSecretKey1234567890!!")
+        //        );
+
+        //        var token = new JwtSecurityToken(
+        //            issuer: "MyStore",
+        //            audience: "MyStoreClient",
+        //            expires: DateTime.UtcNow.AddHours(1),
+        //            claims: authClaims,
+        //            signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+        //        );
+
+        //        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+        //        // ✅ Trả về chuẩn OAuth style
+        //        return Ok(new
+        //        {
+        //            token = tokenString,
+        //            token_type = "Bearer",
+        //            expires_in = 3600, // giây (1 giờ)
+        //            expiration = token.ValidTo
+        //        });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, new { message = $"Internal Server Error: {ex.Message}" });
+        //    }
+        //}
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginViewModel model)
         {
             try
             {
-                var user = await _userManager.FindByNameAsync(model.Username) ?? await _userManager.FindByEmailAsync(model.Username);
+                var user = await _userManager.FindByNameAsync(model.Username)
+                           ?? await _userManager.FindByEmailAsync(model.Username);
+
                 if (user == null)
                 {
-                    return BadRequest("Account does not exist");
+                    return BadRequest(new { message = "Account does not exist" });
                 }
                 if (!user.IsActive)
-                    return BadRequest("Your account has been locked.");
+                {
+                    return BadRequest(new { message = "Your account has been locked." });
+                }
 
                 var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
                 if (!result.Succeeded)
-                    return Unauthorized("Invalid Password");
+                {
+                    return Unauthorized(new { message = "Invalid password" });
+                }
 
-                return Ok("Login successful!");
+                return Ok(new { message = "Login Success" });
             }
             catch (Exception ex)
             {
-                return BadRequest("Unknown error, please try again.");
+                return StatusCode(500, new { message = $"Internal Server Error: {ex.Message}" });
             }
         }
 

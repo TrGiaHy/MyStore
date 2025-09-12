@@ -15,6 +15,7 @@ namespace BusinessLogic.Services.OrderItem
         Task DeleteAsync(OrderItems entity);
         Task DeleteAsync(Guid id);
         Task<bool> ExistsAsync(Guid id);
+        Task<int> SaveChangesAsync();
         int Count();
         Task<int> CountAsync();
         Task<IEnumerable<OrderItems>> ListAsync();
