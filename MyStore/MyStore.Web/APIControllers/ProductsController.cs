@@ -43,7 +43,7 @@ namespace MyStore.Web.APIControllers
                     p.ProductId,
                     p.Name,
                     p.Description,
-                    p.Price,
+                    Price = Math.Round(p.Price, 0),
                     p.StockQuantity,
                     p.CreatedDate,
                     p.IsActive,
@@ -64,12 +64,13 @@ namespace MyStore.Web.APIControllers
         {
             try
             {
-                // Lấy tất cả sản phẩm active, bao gồm cả hình ảnh
+                // Lấy tất cả sản phẩm active, bao gồm cả hình ảnh và category
                 var products = await _productService.ListAsync(
                     filter: p => p.IsActive,
                     orderBy: null,
                     includeProperties: q => q
                         .Include(p => p.ProductImages)
+                        .Include(p => p.Category) // Include thêm Category
                 );
 
                 if (products == null || !products.Any())
@@ -77,17 +78,18 @@ namespace MyStore.Web.APIControllers
                     return NotFound("No active products found.");
                 }
 
-                // Trả về danh sách sản phẩm kèm hình ảnh
+                // Trả về danh sách sản phẩm kèm hình ảnh và tên category
                 var result = products.Select(p => new
                 {
                     p.ProductId,
                     p.Name,
                     p.Description,
-                    p.Price,
+                    Price = Math.Round(p.Price, 0),
                     p.StockQuantity,
                     p.CreatedDate,
                     p.IsActive,
                     p.CategoryID,
+                    CategoryName = p.Category != null ? p.Category.Name : null,
                     Images = p.ProductImages?.Select(img => img.ImageUrl).ToList()
                 });
 

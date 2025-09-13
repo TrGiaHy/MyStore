@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Repository.ViewModels.ProductViewModel>
+@using System.Security.Claims
+@using Model
+@using Repository.ViewModels
+
+@foreach (var product in Model)
+{
+    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+        <div class="product-cart-wrap mb-30">
+            <div class="product-img-action-wrap">
+                <div class="product-img product-img-zoom">
+                    <a href="shop-product-right.html">
+                        <img class="default-img" src="@(product.Images?.FirstOrDefault() ?? "/assets/imgs/shop/product-5-1.jpg")" />
+
+                        @* <img class="hover-img" src="~/assets/imgs/shop/product-1-2.jpg" alt="" /> *@
+                    </a>
+                </div>
+                @* <div class="product-action-1">
+                    <a aria-label="Add To Wishlist" class="action-btn"
+                       href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                    <a aria-label="Compare" class="action-btn" href="shop-compare.html">
+                        <i class="fi-rs-shuffle"></i>
+                    </a>
+                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
+                       data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
+                </div> *@
+                @* <div class="product-badges product-badges-position product-badges-mrg">
+                    <span class="hot">Hot</span>
+                </div> *@
+            </div>
+            <div class="product-content-wrap">
+                <h2>
+                    @* <a href="@Url.Action("ProductDetail", "Home", new { id = product.ID })"> *@
+                    <a>
+                        @product.Name
+                    </a>
+                </h2>
+                @* <div class="product-rate-cover">
+                    <div class="product-rate d-inline-block">
+                        <div class="product-rating" style="width: @(averageRating * 20)%"></div>
+                    </div>
+                    <span class="font-small ml-5 text-muted">(@product.Reviews.Count())</span>
+                </div> *@
+                <div>
+                    @* <span class="font-small text-muted">
+                        By <a href="@Url.Action("GetStoreDetail", "Home", new { id = product.StoreID })">
+                            <a>
+                            @product.StoreDetails?.Name
+                        </a>
+                    </span>
+                    <br /> *@
+                    <span class="font-small text-muted">
+                        Category: 
+                        @* <a href="@Url.Action("GetAllProductOfCategory", "Home", new { id = product.CategoryID })"> *@
+						<a>
+                            @product.CategoryName
+                        </a>
+                    </span>
+                </div>
+                <div class="product-card-bottom">
+                    <div class="product-price">
+                        <span>@product.Price</span>
+                        @* <span class="old-price">$32.8</span> *@
+                    </div>
+                </div>
+                <div class="product-card-bottom">
+
+                    <div class="add-cart">
+                        @* <a class="add" href="@Url.Action("ProductDetail", "Home", new { id = product.ID })"> *@
+                        <a class="add">
+                            <i class="fi-rs-shopping-cart mr-5"></i>View Detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (!Model.Any())
+{
+    <div class="col-12">
+        <div class="text-center py-5">
+            <h4>No products found</h4>
+            <p>Try adjusting your filters or search criteria.</p>
+        </div>
+    </div>
+}

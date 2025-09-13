@@ -62,8 +62,8 @@ builder.Services.Configure<IdentityOptions>(options =>
 // Cấu hình Cookie
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/Home/Login";
-    options.LogoutPath = "/Home/Logout";
+    options.LoginPath = "/Customer/Login";
+    options.LogoutPath = "/Customer/Logout";
     options.AccessDeniedPath = "/Error/404";
     options.ReturnUrlParameter = "ReturnUrl";
     options.ExpireTimeSpan = TimeSpan.FromDays(14);
@@ -79,8 +79,8 @@ builder.Services.AddAuthentication(options =>
 })
 .AddCookie(options =>
 {
-    options.LoginPath = "/Home/Login";
-    options.LogoutPath = "/Home/Logout";
+    options.LoginPath = "/Customer/Login";
+    options.LogoutPath = "/Customer/Logout";
     options.AccessDeniedPath = "/Error/404";
     options.ExpireTimeSpan = TimeSpan.FromDays(14);
     options.SlidingExpiration = true;
@@ -131,6 +131,6 @@ app.MapControllers();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Customer}/{action=Index}");
 
 app.Run();

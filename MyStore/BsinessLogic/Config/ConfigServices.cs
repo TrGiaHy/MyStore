@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Services.CartItem;
+﻿using BusinessLogic.Services.ApiClientService;
+using BusinessLogic.Services.CartItem;
 using BusinessLogic.Services.Category;
 using BusinessLogic.Services.CategoryServices;
 using BusinessLogic.Services.Order;
@@ -28,7 +29,7 @@ namespace BusinessLogic.Config
 
             services.AddScoped<IShoppingCartService, ShoppingCartService>();
 
-
+            services.AddScoped<IApiClientService, ApiClientService>();
         }
     }
 }
