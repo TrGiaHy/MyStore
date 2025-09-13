@@ -1,0 +1,289 @@
+﻿@using Repository.ViewModels
+@model IEnumerable<Repository.ViewModels.ProductViewModel>
+@* @using MyStore.Web.Controllers
+@using Repository.ViewModels
+@model ProductViewModel *@
+@{
+    var categories = ViewBag.Categories as List<CategoryViewModel>;
+}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Nest - Multipurpose eCommerce HTML Template</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/imgs/theme/favicon.svg" />
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/main.css?v=6.0" />
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/~/assets/prompt.js"></script>
+    @Html.Raw(" <link href='https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css' rel='stylesheet'>");
+
+    <link rel="stylesheet" href="~/assets/js/gridjs/theme/mermaid.min.css">
+
+</head>
+
+<body>
+    
+    @await Html.PartialAsync("_Header")
+    <main class="main">
+        <section class="home-slider style-2 position-relative mb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-12">
+                        <div class="home-slide-cover">
+                            <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
+                                <div class="single-hero-slider single-animation-wrap"
+                                     style="background-image: url(~/assets/imgs/slider/slider-3.png)">
+                                    <div class="slider-content">
+                                        <h1 class="display-2 mb-40">
+                                            Pure Coffe<br />
+                                            Big discount
+                                        </h1>
+                                        <p class="mb-65">Save up to 50% off on your first order</p>
+                                        <form class="form-subcriber d-flex">
+                                            <input type="email" placeholder="Your emaill address" />
+                                            <button class="btn" type="submit">Subscribe</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="single-hero-slider single-animation-wrap"
+                                     style="background-image: url(~/assets/imgs/slider/slider-4.png)">
+                                    <div class="slider-content">
+                                        <h1 class="display-2 mb-40">
+                                            Snacks box<br />
+                                            daily save
+                                        </h1>
+                                        <p class="mb-65">Sign up for the daily newsletter</p>
+                                        <form class="form-subcriber d-flex">
+                                            <input type="email" placeholder="Your emaill address" />
+                                            <button class="btn" type="submit">Subscribe</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-arrow hero-slider-1-arrow"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-none d-xl-block">
+                        <div class="banner-img style-3 animated animated">
+                            <div class="banner-text mt-50">
+                                <h2 class="mb-50">
+                                    Delivered <br />
+                                    to
+                                    <span class="text-brand">
+                                        your<br />
+                                        home
+                                    </span>
+                                </h2>
+                                <a href="shop-grid-right.html" class="btn btn-xs">
+                                    Shop Now <i class="fi-rs-arrow-small-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End hero slider-->
+        <section class="banners mb-25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="banner-img">
+                            <img src="~/assets/imgs/banner/banner-1.png" alt="" />
+                            <div class="banner-text">
+                                <h4>
+                                    Everyday Fresh & <br />Clean with Our<br />
+                                    Products
+                                </h4>
+                                <a href="shop-grid-right.html" class="btn btn-xs">
+                                    Shop Now <i class="fi-rs-arrow-small-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="banner-img">
+                            <img src="~/assets/imgs/banner/banner-2.png" alt="" />
+                            <div class="banner-text">
+                                <h4>
+                                    Make your Breakfast<br />
+                                    Healthy and Easy
+                                </h4>
+                                <a href="shop-grid-right.html" class="btn btn-xs">
+                                    Shop Now <i class="fi-rs-arrow-small-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-md-none d-lg-flex">
+                        <div class="banner-img mb-sm-0">
+                            <img src="~/assets/imgs/banner/banner-3.png" alt="" />
+                            <div class="banner-text">
+                                <h4>The best Organic <br />Products Online</h4>
+                                <a href="shop-grid-right.html" class="btn btn-xs">
+                                    Shop Now <i class="fi-rs-arrow-small-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End banners-->
+        <section class="product-tabs section-padding position-relative">
+            <div class="container">
+                <div class="section-title style-2">
+                    <h3>Popular Products</h3>
+                    <ul class="nav nav-tabs links" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link category-tab active"
+                                    data-category=""
+                                    type="button"
+                                    aria-selected="true">
+                                All
+                            </button>
+                        </li>
+                        @if (categories != null)
+                        {
+                            foreach (var cat in categories)
+                            {
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link category-tab"
+                                            data-category="@cat.CategoryId"
+                                            type="button"
+                                            aria-selected="false">
+                                        @cat.Name
+                                    </button>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+                <!--End nav-tabs-->
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
+                        <div class="row product-grid-4" id="product-list">
+                            @await Html.PartialAsync("_ProductGrid", Model)
+                        </div>
+                        <!--End product-grid-4-->
+                    </div>
+                    <!--En tab seven-->
+                </div>
+                <!--End tab-content-->
+            </div>
+        </section>
+        <!--End 4 columns-->
+        <section class="popular-categories section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <div class="title">
+                        <h3>Shop by Categories</h3>
+                        @* <a class="show-all" href="shop-grid-right.html">
+                            All Categories
+                            <i class="fi-rs-angle-right"></i>
+                        </a> *@
+                    </div>
+                    <div class="slider-arrow slider-arrow-2 flex-right carausel-8-columns-arrow"
+                         id="carausel-8-columns-arrows"></div>
+                </div>
+                <div class="carausel-8-columns-cover position-relative">
+                    <div class="carausel-8-columns" id="carausel-8-columns">
+                        
+                        @if (categories != null)
+                        {
+                            foreach (var cat in categories)
+                            {
+                                <div class="card-1">
+                                    <figure class="img-hover-scale overflow-hidden">
+                                        <a href="shop-grid-right.html">
+                                            <img src="~/assets/imgs/theme/icons/category-9.svg"
+                                                 alt="" />
+                                        </a>
+                                    </figure>
+                                    <h6>
+                                        <a href="shop-grid-right.html">@cat.Name</a>
+                                    </h6>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @await Html.PartialAsync("_Footer_User")
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <img src="~/assets/imgs/theme/loading.gif" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor JS-->
+    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="~/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/plugins/slick.js"></script>
+    <script src="~/assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="~/assets/js/plugins/wow.js"></script>
+    <script src="~/assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="~/assets/js/plugins/magnific-popup.js"></script>
+    <script src="~/assets/js/plugins/select2.min.js"></script>
+    <script src="~/assets/js/plugins/waypoints.js"></script>
+    <script src="~/assets/js/plugins/counterup.js"></script>
+    <script src="~/assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="~/assets/js/plugins/images-loaded.js"></script>
+    <script src="~/assets/js/plugins/isotope.js"></script>
+    <script src="~/assets/js/plugins/scrollup.js"></script>
+    <script src="~/assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="~/assets/js/plugins/jquery.theia.sticky.js"></script>
+    <script src="~/assets/js/plugins/jquery.elevatezoom.js"></script>
+    <!-- Template  JS -->
+    <script src="~/assets/js/main.js?v=6.0"></script>
+    <script src="~/assets/js/shop.js?v=6.0"></script>
+</body>
+
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.category-tab').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                // Xóa class active và aria-selected trên tất cả tab
+                document.querySelectorAll('.category-tab').forEach(function (b) {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                // Thêm class active và aria-selected cho tab vừa click
+                this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
+
+                var categoryId = this.getAttribute('data-category');
+                var url = '/Customer/ProductGrid' + (categoryId ? '?categoryId=' + categoryId : '');
+                fetch(url)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('product-list').innerHTML = html;
+                    });
+            });
+        });
+    });
+</script>

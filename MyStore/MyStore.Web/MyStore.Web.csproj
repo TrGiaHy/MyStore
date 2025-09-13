@@ -5,6 +5,21 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Data\Dataset\**" />
+		<Compile Remove="wwwroot\microsoft\**" />
+		<Content Remove="Data\Dataset\**" />
+		<Content Remove="wwwroot\microsoft\**" />
+		<EmbeddedResource Remove="Data\Dataset\**" />
+		<EmbeddedResource Remove="wwwroot\microsoft\**" />
+		<None Remove="Data\Dataset\**" />
+		<None Remove="wwwroot\microsoft\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="assets\imgs\theme\icons\" />
+	</ItemGroup>
+	
 	
 	<ItemGroup>
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
