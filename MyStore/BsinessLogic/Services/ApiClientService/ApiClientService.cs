@@ -11,7 +11,7 @@ namespace BusinessLogic.Services.ApiClientService
         public ApiClientService(IHttpClientFactory httpClientFactory)
         {
             _httpClient = httpClientFactory.CreateClient();
-            _httpClient.BaseAddress = new Uri("https://localhost:7139");
+            _httpClient.BaseAddress = new Uri("http://localhost:5021");
         }
 
         public async Task<T?> GetAsync<T>(string url)

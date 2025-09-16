@@ -51,6 +51,7 @@
                             var countProducts = Model.Count;
                         }
                         <h6 class="text-body">There are <span class="text-brand">@countProducts</span> products in your cart</h6>
+                        <div id="selectedInfo" style="display: none;" class="text-success"></div>
                         <h6 class="text-body">
                             <a href="#" class="text-muted">
                                 <i class="fi-rs-trash mr-5"></i>Clear
@@ -67,9 +68,9 @@
                             <thead>
                                 <tr class="main-heading">
                                     <th class="custome-checkbox start pl-30">
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                               id="exampleCheckbox11" value="">
-                                        <label class="form-check-label" for="exampleCheckbox11"></label>
+                                        <input class="form-check-input" type="checkbox" name="selectAll"
+                                               id="selectAll" value="">
+                                        <label class="form-check-label" for="selectAll"></label>
                                     </th>
                                     <th scope="col" colspan="2">Product</th>
                                     <th scope="col">Unit Price</th>
@@ -91,9 +92,9 @@
                                     {
                                         <tr class="pt-30">
                                             <td class="custome-checkbox pl-30">
-                                                <input class="form-check-input" type="checkbox" name="checkbox"
-                                                       id="exampleCheckbox1" value="@item.CartItemId">
-                                                <label class="form-check-label" for="exampleCheckbox1"></label>
+                                                <input class="form-check-input" type="checkbox" name="productCheckbox"
+                                                       id="product_@item.ProductId" value="@item.ProductId">
+                                                <label class="form-check-label" for="product_@item.ProductId"></label>
                                             </td>
                                             <td class="image product-thumbnail pt-40">
                                                 @* <img src="assets/imgs/shop/product-1-1.jpg" alt="#"> *@
@@ -204,7 +205,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <a href="#" class="btn mb-20 w-100">Proceed To CheckOut<i class="fi-rs-sign-out ml-15"></i></a>
+                        <a href="#" class="btn mb-20 w-100" id="proceedToCheckout" disabled>Proceed To CheckOut<i class="fi-rs-sign-out ml-15"></i></a>
                     </div>
                 </div>
             </div>
@@ -244,6 +245,7 @@
     <!-- Template  JS -->
     <script src="~/assets/js/main.js?v=6.0"></script>
     <script src="~/assets/js/shop.js?v=6.0"></script>
+    <script src="~/assets/js/cart.js?v=1.0"></script>
 </body>
 
 </html>
