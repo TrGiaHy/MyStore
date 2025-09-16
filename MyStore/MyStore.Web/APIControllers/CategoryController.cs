@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Model;
 using Repository.ViewModels;
+using static BusinessLogic.Services.ApiClientService.ApiClientService;
 
 namespace MyStore.Web.APIControllers
 {
@@ -37,51 +38,88 @@ namespace MyStore.Web.APIControllers
                     c.Description,
                     c.IsActive
                 });
-                return Ok(result);
+
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = result,
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
-        // Lấy tất cả category đang hoạt động
         [HttpGet("GetActiveCategories")]
         public async Task<IActionResult> GetActiveCategories()
         {
             try
             {
                 var categories = await _categoryService.ListAsync(c => c.IsActive);
+                var products = await _productService.ListAsync(p => p.IsActive);
+
                 var result = categories.Select(c => new
                 {
                     c.CategoryId,
                     c.Name,
                     c.Description,
-                    c.IsActive
+                    c.IsActive,
+                    ProductCount = products.Count(p => p.CategoryID == c.CategoryId)
                 });
-                return Ok(result);
+
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = result,
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
-        // Tạo mới category
         [HttpPost("CreateCategory")]
         public async Task<IActionResult> CreateCategory([FromBody] CategoryCreateUpdateViewModel model)
         {
             try
             {
                 if (model == null || string.IsNullOrWhiteSpace(model.Name))
-                    return BadRequest("Invalid data.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Invalid data.",
+                        StatusCode = 400
+                    });
+                }
 
-                // Check trùng tên (không phân biệt hoa thường)
                 var existed = await _categoryService.FindAsync(
                     c => c.Name.ToLower().Trim() == model.Name.Trim().ToLower()
                 );
+
                 if (existed != null)
-                    return BadRequest("Category name already exists.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Category name already exists.",
+                        StatusCode = 400
+                    });
+                }
 
                 var category = new Categories
                 {
@@ -94,15 +132,24 @@ namespace MyStore.Web.APIControllers
                 await _categoryService.AddAsync(category);
                 await _categoryService.SaveChangesAsync();
 
-                return Ok(new { Message = "Category created successfully!", CategoryId = category.CategoryId });
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = new { Message = "Category created successfully!", CategoryId = category.CategoryId },
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
-        // Cập nhật thông tin category
         [HttpPut("UpdateCategory/{id:guid}")]
         public async Task<IActionResult> UpdateCategory(Guid id, [FromBody] CategoryCreateUpdateViewModel model)
         {
@@ -110,17 +157,37 @@ namespace MyStore.Web.APIControllers
             {
                 var category = await _categoryService.FindAsync(c => c.CategoryId == id);
                 if (category == null)
-                    return NotFound("Category not found.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Category not found.",
+                        StatusCode = 404
+                    });
+                }
 
                 if (string.IsNullOrWhiteSpace(model.Name))
-                    return BadRequest("Category name is required.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Category name is required.",
+                        StatusCode = 400
+                    });
+                }
 
-                // Check trùng tên (không phân biệt hoa thường, loại trừ chính nó)
                 var existed = await _categoryService.FindAsync(
                     c => c.Name.ToLower().Trim() == model.Name.Trim().ToLower() && c.CategoryId != id
                 );
                 if (existed != null)
-                    return BadRequest("Category name already exists.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Category name already exists.",
+                        StatusCode = 400
+                    });
+                }
 
                 category.Name = model.Name.Trim();
                 category.Description = model.Description;
@@ -128,15 +195,24 @@ namespace MyStore.Web.APIControllers
                 await _categoryService.UpdateAsync(category);
                 await _categoryService.SaveChangesAsync();
 
-                return Ok(new { Message = "Category updated successfully!", CategoryId = category.CategoryId });
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = new { Message = "Category updated successfully!", CategoryId = category.CategoryId },
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
-        // Cập nhật trạng thái IsActive (ẩn/hiện)
         [HttpPatch("SetActive/{id:guid}")]
         public async Task<IActionResult> SetActive(Guid id, [FromBody] bool isActive)
         {
@@ -144,30 +220,42 @@ namespace MyStore.Web.APIControllers
             {
                 var category = await _categoryService.FindAsync(c => c.CategoryId == id);
                 if (category == null)
-                    return NotFound("Category not found.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Category not found.",
+                        StatusCode = 404
+                    });
+                }
 
                 category.IsActive = isActive;
                 await _categoryService.UpdateAsync(category);
                 await _categoryService.SaveChangesAsync();
 
-                return Ok(new
+                return Ok(new ApiResponse<object>
                 {
-                    Message = "Category IsActive updated successfully!",
-                    CategoryId = category.CategoryId,
-                    IsActive = category.IsActive
+                    Success = true,
+                    Data = new { Message = "Category IsActive updated successfully!", CategoryId = category.CategoryId, IsActive = category.IsActive },
+                    StatusCode = 200
                 });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
+
         [HttpGet("GetProductsByCategory/{categoryId:guid}")]
         public async Task<IActionResult> GetProductsByCategory(Guid categoryId)
         {
             try
             {
-                // Lấy sản phẩm theo categoryId, chỉ lấy sản phẩm đang hoạt động
                 var products = await _productService.ListAsync(
                     filter: p => p.CategoryID == categoryId && p.IsActive,
                     orderBy: null,
@@ -177,7 +265,14 @@ namespace MyStore.Web.APIControllers
                 );
 
                 if (products == null || !products.Any())
-                    return NotFound("No products found in this category.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "No products found in this category.",
+                        StatusCode = 404
+                    });
+                }
 
                 var result = products.Select(p => new
                 {
@@ -193,12 +288,23 @@ namespace MyStore.Web.APIControllers
                     Images = p.ProductImages?.Select(img => img.ImageUrl).ToList()
                 });
 
-                return Ok(result);
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = result,
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
+
     }
 }

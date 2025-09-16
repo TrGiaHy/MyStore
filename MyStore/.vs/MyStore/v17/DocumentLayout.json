@@ -3,48 +3,76 @@
   "WorkspaceRootPath": "D:\\MyStore\\MyStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\views\\shared\\_productgrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\views\\shared\\_productgrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BusinessLogic.csproj|d:\\mystore\\mystore\\bsinesslogic\\services\\apiclientservice\\apiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BusinessLogic.csproj|solutionrelative:bsinesslogic\\services\\apiclientservice\\apiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\views\\customer\\productdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\views\\customer\\productdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\controllers\\sellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\controllers\\sellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BusinessLogic.csproj|d:\\mystore\\mystore\\bsinesslogic\\services\\apiclientservice\\iapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BusinessLogic.csproj|solutionrelative:bsinesslogic\\services\\apiclientservice\\iapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BusinessLogic.csproj|d:\\mystore\\mystore\\bsinesslogic\\services\\apiclientservice\\apiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BusinessLogic.csproj|solutionrelative:bsinesslogic\\services\\apiclientservice\\apiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\useraccountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\useraccountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BusinessLogic.csproj|d:\\mystore\\mystore\\bsinesslogic\\config\\configservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C018BF65-398A-447F-B78A-1075FFD16B71}|BsinessLogic\\BusinessLogic.csproj|solutionrelative:bsinesslogic\\config\\configservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|d:\\mystore\\mystore\\repository\\viewmodels\\categoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\viewmodels\\categoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\apicontrollers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\apicontrollers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|d:\\mystore\\mystore\\repository\\viewmodels\\cartitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD1397B1-B7D3-4D86-A5F7-2B3E48AE879B}|Repository\\Repository.csproj|solutionrelative:repository\\viewmodels\\cartitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\views\\customer\\getcartitemsbyuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\views\\customer\\getcartitemsbyuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\views\\shared\\_productgrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\views\\shared\\_productgrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|d:\\mystore\\mystore\\mystore.web\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55E4D409-4F6B-46AA-8A1A-0C5F1D6DDEDA}|MyStore.Web\\MyStore.Web.csproj|solutionrelative:mystore.web\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,60 +82,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 10,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\ProductsController.cs",
-              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\ProductsController.cs",
-              "RelativeToolTip": "MyStore.Web\\APIControllers\\ProductsController.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAxwC0AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T15:08:09.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_ProductGrid.cshtml",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Shared\\_ProductGrid.cshtml",
-              "RelativeDocumentMoniker": "MyStore.Web\\Views\\Shared\\_ProductGrid.cshtml",
-              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Shared\\_ProductGrid.cshtml",
-              "RelativeToolTip": "MyStore.Web\\Views\\Shared\\_ProductGrid.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAuwAMAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-13T14:59:03.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\CartController.cs",
-              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\CartController.cs",
-              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\CartController.cs",
-              "RelativeToolTip": "MyStore.Web\\APIControllers\\CartController.cs",
-              "ViewState": "AgIAAJMBAAAAAAAAAAAqwKgBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:35:47.658Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\AuthController.cs",
-              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\AuthController.cs",
-              "RelativeToolTip": "MyStore.Web\\APIControllers\\AuthController.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAiwK0AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:35:31.956Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -139,92 +115,235 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "MyStore.Web\\Controllers\\CustomerController.cs",
-              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "MyStore.Web\\Controllers\\CustomerController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwCQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:08:58.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Customer\\Index.cshtml",
-              "RelativeDocumentMoniker": "MyStore.Web\\Views\\Customer\\Index.cshtml",
-              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Customer\\Index.cshtml",
-              "RelativeToolTip": "MyStore.Web\\Views\\Customer\\Index.cshtml",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAqwKwAAAAdAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MyStore.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MyStore.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-13T14:13:47.468Z",
+              "WhenOpened": "2025-09-16T12:43:20.222Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\CategoryController.cs",
-              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\CategoryController.cs",
-              "RelativeToolTip": "MyStore.Web\\APIControllers\\CategoryController.cs",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAywLwAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\ProductsController.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\ProductsController.cs",
+              "RelativeToolTip": "MyStore.Web\\APIControllers\\ProductsController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAADwv34AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:25:20.492Z",
+              "WhenOpened": "2025-09-16T11:58:42.635Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IApiClientService.cs",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\BsinessLogic\\Services\\ApiClientService\\IApiClientService.cs",
-              "RelativeDocumentMoniker": "BsinessLogic\\Services\\ApiClientService\\IApiClientService.cs",
-              "ToolTip": "D:\\MyStore\\MyStore\\BsinessLogic\\Services\\ApiClientService\\IApiClientService.cs",
-              "RelativeToolTip": "BsinessLogic\\Services\\ApiClientService\\IApiClientService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:31:49.568Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "ApiClientService.cs",
               "DocumentMoniker": "D:\\MyStore\\MyStore\\BsinessLogic\\Services\\ApiClientService\\ApiClientService.cs",
               "RelativeDocumentMoniker": "BsinessLogic\\Services\\ApiClientService\\ApiClientService.cs",
               "ToolTip": "D:\\MyStore\\MyStore\\BsinessLogic\\Services\\ApiClientService\\ApiClientService.cs",
               "RelativeToolTip": "BsinessLogic\\Services\\ApiClientService\\ApiClientService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAHcAAAAAAAAAAAASwJEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:32:07.294Z",
+              "WhenOpened": "2025-09-16T11:13:17.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\CartController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\CartController.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\CartController.cs",
+              "RelativeToolTip": "MyStore.Web\\APIControllers\\CartController.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAywHQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T10:40:02.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "MyStore.Web\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAxwJQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T10:24:06.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductDetail.cshtml",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Customer\\ProductDetail.cshtml",
+              "RelativeDocumentMoniker": "MyStore.Web\\Views\\Customer\\ProductDetail.cshtml",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Customer\\ProductDetail.cshtml",
+              "RelativeToolTip": "MyStore.Web\\Views\\Customer\\ProductDetail.cshtml",
+              "ViewState": "AgIAAKoCAAAAAAAAAIAwwLsCAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-16T11:13:47.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "MyStore.Web\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAYwDIAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T11:29:09.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SellerController.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Controllers\\SellerController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\Controllers\\SellerController.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Controllers\\SellerController.cs",
+              "RelativeToolTip": "MyStore.Web\\Controllers\\SellerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T12:13:11.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "MyStore.Web\\Views\\Customer\\Index.cshtml",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "MyStore.Web\\Views\\Customer\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAywCgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-16T10:20:54.697Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ConfigServices.cs",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\BsinessLogic\\Config\\ConfigServices.cs",
-              "RelativeDocumentMoniker": "BsinessLogic\\Config\\ConfigServices.cs",
-              "ToolTip": "D:\\MyStore\\MyStore\\BsinessLogic\\Config\\ConfigServices.cs",
-              "RelativeToolTip": "BsinessLogic\\Config\\ConfigServices.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAswBoAAAAAAAAAAAAAAA==",
+              "Title": "IApiClientService.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\BsinessLogic\\Services\\ApiClientService\\IApiClientService.cs",
+              "RelativeDocumentMoniker": "BsinessLogic\\Services\\ApiClientService\\IApiClientService.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\BsinessLogic\\Services\\ApiClientService\\IApiClientService.cs",
+              "RelativeToolTip": "BsinessLogic\\Services\\ApiClientService\\IApiClientService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:32:26.53Z",
+              "WhenOpened": "2025-09-16T11:51:37.02Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "CategoryViewModel.cs",
-              "DocumentMoniker": "D:\\MyStore\\MyStore\\Repository\\ViewModels\\CategoryViewModel.cs",
-              "RelativeDocumentMoniker": "Repository\\ViewModels\\CategoryViewModel.cs",
-              "ToolTip": "D:\\MyStore\\MyStore\\Repository\\ViewModels\\CategoryViewModel.cs",
-              "RelativeToolTip": "Repository\\ViewModels\\CategoryViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "Title": "UserAccountsController.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\UserAccountsController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\UserAccountsController.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\UserAccountsController.cs",
+              "RelativeToolTip": "MyStore.Web\\APIControllers\\UserAccountsController.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAwwN0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:11:27.698Z",
+              "WhenOpened": "2025-09-16T12:01:58.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\OrdersController.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\OrdersController.cs",
+              "RelativeToolTip": "MyStore.Web\\APIControllers\\OrdersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T11:56:53.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\CategoryController.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\CategoryController.cs",
+              "RelativeToolTip": "MyStore.Web\\APIControllers\\CategoryController.cs",
+              "ViewState": "AgIAABkBAAAAAAAAAAAcwDMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T11:55:40.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "MyStore.Web\\APIControllers\\AuthController.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\APIControllers\\AuthController.cs",
+              "RelativeToolTip": "MyStore.Web\\APIControllers\\AuthController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowCQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T11:48:50.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CartItemViewModel.cs",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\Repository\\ViewModels\\CartItemViewModel.cs",
+              "RelativeDocumentMoniker": "Repository\\ViewModels\\CartItemViewModel.cs",
+              "ToolTip": "D:\\MyStore\\MyStore\\Repository\\ViewModels\\CartItemViewModel.cs",
+              "RelativeToolTip": "Repository\\ViewModels\\CartItemViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T10:27:07.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GetCartItemsByUser.cshtml",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Customer\\GetCartItemsByUser.cshtml",
+              "RelativeDocumentMoniker": "MyStore.Web\\Views\\Customer\\GetCartItemsByUser.cshtml",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Customer\\GetCartItemsByUser.cshtml",
+              "RelativeToolTip": "MyStore.Web\\Views\\Customer\\GetCartItemsByUser.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAywDsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-16T10:17:30.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_ProductGrid.cshtml",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Shared\\_ProductGrid.cshtml",
+              "RelativeDocumentMoniker": "MyStore.Web\\Views\\Shared\\_ProductGrid.cshtml",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Shared\\_ProductGrid.cshtml",
+              "RelativeToolTip": "MyStore.Web\\Views\\Shared\\_ProductGrid.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-16T10:34:38.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Header.cshtml",
+              "DocumentMoniker": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Shared\\_Header.cshtml",
+              "RelativeDocumentMoniker": "MyStore.Web\\Views\\Shared\\_Header.cshtml",
+              "ToolTip": "D:\\MyStore\\MyStore\\MyStore.Web\\Views\\Shared\\_Header.cshtml",
+              "RelativeToolTip": "MyStore.Web\\Views\\Shared\\_Header.cshtml",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAywLUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-16T10:22:11.91Z",
               "EditorCaption": ""
             }
           ]

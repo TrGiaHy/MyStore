@@ -9,6 +9,7 @@ namespace Model
         [Key]
         public Guid OrderItemId { get; set; } = Guid.NewGuid();
         public int Quantity { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal UnitPrice { get; set; }
 
         // Foreign keys
