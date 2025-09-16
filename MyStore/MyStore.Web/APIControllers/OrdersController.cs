@@ -3,6 +3,7 @@ using BusinessLogic.Services.OrderItem;
 using BusinessLogic.Services.Product;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using static BusinessLogic.Services.ApiClientService.ApiClientService;
 
 namespace MyStore.Web.APIControllers
 {
@@ -25,11 +26,17 @@ namespace MyStore.Web.APIControllers
         public async Task<IActionResult> GetOrderHistoryByUser(string userId)
         {
             if (string.IsNullOrWhiteSpace(userId))
-                return BadRequest("UserId is required.");
+            {
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "UserId is required.",
+                    StatusCode = 400
+                });
+            }
 
             try
             {
-                // Lấy danh sách order của user, bao gồm OrderItems
                 var orders = await _orderService.ListAsync(
                     filter: o => o.UserId == userId,
                     orderBy: q => q.OrderByDescending(o => o.OrderDate),
@@ -37,9 +44,15 @@ namespace MyStore.Web.APIControllers
                 );
 
                 if (orders == null || !orders.Any())
-                    return Ok(new { Orders = new List<object>() });
+                {
+                    return Ok(new ApiResponse<object>
+                    {
+                        Success = true,
+                        Data = new { Orders = new List<object>() },
+                        StatusCode = 200
+                    });
+                }
 
-                // Tính tổng tiền và tổng số lượng sản phẩm cho từng order
                 var orderList = orders.Select(o => new
                 {
                     o.OrderId,
@@ -51,14 +64,21 @@ namespace MyStore.Web.APIControllers
                     TotalQuantity = o.OrderItems?.Sum(oi => oi.Quantity) ?? 0
                 }).ToList();
 
-                return Ok(new
+                return Ok(new ApiResponse<object>
                 {
-                    Orders = orderList
+                    Success = true,
+                    Data = new { Orders = orderList },
+                    StatusCode = 200
                 });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -67,7 +87,6 @@ namespace MyStore.Web.APIControllers
         {
             try
             {
-                // Lấy order kèm OrderItems và Product
                 var orders = await _orderService.ListAsync(
                     filter: o => o.OrderId == orderId,
                     includeProperties: q => q.Include(o => o.OrderItems).ThenInclude(oi => oi.Product)
@@ -75,7 +94,14 @@ namespace MyStore.Web.APIControllers
 
                 var order = orders.FirstOrDefault();
                 if (order == null)
-                    return NotFound("Order not found.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Order not found.",
+                        StatusCode = 404
+                    });
+                }
 
                 var products = order.OrderItems?.Select(oi => new
                 {
@@ -88,15 +114,21 @@ namespace MyStore.Web.APIControllers
                     TotalPrice = oi.Quantity * oi.UnitPrice
                 }).ToList();
 
-                return Ok(new
+                return Ok(new ApiResponse<object>
                 {
-                    OrderId = order.OrderId,
-                    Products = products
+                    Success = true,
+                    Data = new { OrderId = order.OrderId, Products = products },
+                    StatusCode = 200
                 });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -105,20 +137,32 @@ namespace MyStore.Web.APIControllers
         {
             try
             {
-                // Lấy order theo id
                 var order = await _orderService.ListAsync(
                     filter: o => o.OrderId == orderId,
                     includeProperties: q => q.Include(o => o.OrderItems).ThenInclude(oi => oi.Product)
                 );
                 var orderEntity = order.FirstOrDefault();
+
                 if (orderEntity == null)
-                    return NotFound("Order not found.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Order not found.",
+                        StatusCode = 404
+                    });
+                }
 
-                // Chỉ cho phép hủy nếu trạng thái là Pending
                 if (!string.Equals(orderEntity.Status, "Pending", StringComparison.OrdinalIgnoreCase))
-                    return BadRequest("Order cannot be canceled. Only orders with status 'Pending' can be canceled.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Order cannot be canceled. Only orders with status 'Pending' can be canceled.",
+                        StatusCode = 400
+                    });
+                }
 
-                // Cộng lại số lượng stock cho từng sản phẩm trong order
                 if (orderEntity.OrderItems != null)
                 {
                     foreach (var item in orderEntity.OrderItems)
@@ -136,45 +180,84 @@ namespace MyStore.Web.APIControllers
                 await _orderService.UpdateAsync(orderEntity);
                 await _orderService.SaveChangesAsync();
 
-                return Ok(new { Message = "Order canceled successfully.", OrderId = orderEntity.OrderId, Status = orderEntity.Status });
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = new { Message = "Order canceled successfully.", OrderId = orderEntity.OrderId, Status = orderEntity.Status },
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
+
         [HttpPatch("UpdateOrderStatus/{orderId:guid}")]
         public async Task<IActionResult> UpdateOrderStatus(Guid orderId, [FromBody] string newStatus)
         {
-            // Danh sách trạng thái hợp lệ
             var validStatuses = new[] { "Shipping", "Completed", "Canceled by Seller" };
 
             if (string.IsNullOrWhiteSpace(newStatus) || !validStatuses.Contains(newStatus))
-                return BadRequest($"Invalid status. Allowed values: {string.Join(", ", validStatuses)}");
+            {
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Invalid status. Allowed values: {string.Join(", ", validStatuses)}",
+                    StatusCode = 400
+                });
+            }
 
             try
             {
                 var order = await _orderService.FindAsync(o => o.OrderId == orderId);
                 if (order == null)
-                    return NotFound("Order not found.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Order not found.",
+                        StatusCode = 404
+                    });
+                }
 
-                // Không cho cập nhật nếu đã là Completed hoặc Canceled
                 if (string.Equals(order.Status, "Completed", StringComparison.OrdinalIgnoreCase) ||
                     order.Status?.StartsWith("Cancel", StringComparison.OrdinalIgnoreCase) == true)
                 {
-                    return BadRequest("Order cannot be updated. It is already completed or canceled.");
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Order cannot be updated. It is already completed or canceled.",
+                        StatusCode = 400
+                    });
                 }
 
                 order.Status = newStatus;
                 await _orderService.UpdateAsync(order);
                 await _orderService.SaveChangesAsync();
 
-                return Ok(new { Message = "Order status updated successfully.", OrderId = order.OrderId, Status = order.Status });
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = new { Message = "Order status updated successfully.", OrderId = order.OrderId, Status = order.Status },
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
+
     }
 }

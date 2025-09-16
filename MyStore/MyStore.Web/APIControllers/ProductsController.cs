@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Model;
 using Repository.ViewModels;
+using static BusinessLogic.Services.ApiClientService.ApiClientService;
 
 namespace MyStore.Web.APIControllers
 {
@@ -25,19 +26,21 @@ namespace MyStore.Web.APIControllers
         {
             try
             {
-                // Lấy tất cả sản phẩm active, bao gồm cả hình ảnh
                 var products = await _productService.ListAsync(
                     orderBy: null,
-                    includeProperties: q => q
-                        .Include(p => p.ProductImages)
+                    includeProperties: q => q.Include(p => p.ProductImages)
                 );
 
                 if (products == null || !products.Any())
                 {
-                    return NotFound("No active products found.");
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "No products found.",
+                        StatusCode = 404
+                    });
                 }
 
-                // Trả về danh sách sản phẩm kèm hình ảnh
                 var result = products.Select(p => new
                 {
                     p.ProductId,
@@ -51,11 +54,21 @@ namespace MyStore.Web.APIControllers
                     Images = p.ProductImages?.Select(img => img.ImageUrl).ToList()
                 });
 
-                return Ok(result);
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = result,
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -64,21 +77,23 @@ namespace MyStore.Web.APIControllers
         {
             try
             {
-                // Lấy tất cả sản phẩm active, bao gồm cả hình ảnh và category
                 var products = await _productService.ListAsync(
                     filter: p => p.IsActive,
                     orderBy: null,
-                    includeProperties: q => q
-                        .Include(p => p.ProductImages)
-                        .Include(p => p.Category) // Include thêm Category
+                    includeProperties: q => q.Include(p => p.ProductImages)
+                                              .Include(p => p.Category)
                 );
 
                 if (products == null || !products.Any())
                 {
-                    return NotFound("No active products found.");
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "No active products found.",
+                        StatusCode = 404
+                    });
                 }
 
-                // Trả về danh sách sản phẩm kèm hình ảnh và tên category
                 var result = products.Select(p => new
                 {
                     p.ProductId,
@@ -93,11 +108,21 @@ namespace MyStore.Web.APIControllers
                     Images = p.ProductImages?.Select(img => img.ImageUrl).ToList()
                 });
 
-                return Ok(result);
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = result,
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -106,17 +131,22 @@ namespace MyStore.Web.APIControllers
         {
             try
             {
-                // Lấy sản phẩm kèm hình ảnh
                 var products = await _productService.ListAsync(
                     filter: p => p.ProductId == id,
                     orderBy: null,
                     includeProperties: q => q.Include(p => p.ProductImages)
+                                             .Include(p => p.Category)
                 );
 
                 var product = products.FirstOrDefault();
                 if (product == null)
                 {
-                    return NotFound();
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Product not found.",
+                        StatusCode = 404
+                    });
                 }
 
                 var result = new
@@ -124,21 +154,33 @@ namespace MyStore.Web.APIControllers
                     product.ProductId,
                     product.Name,
                     product.Description,
-                    product.Price,
+                    Price = Math.Round(product.Price, 0),
                     product.StockQuantity,
                     product.CreatedDate,
                     product.IsActive,
                     product.CategoryID,
+                    CategoryName = product.Category != null ? product.Category.Name : null,
                     Images = product.ProductImages?.Select(img => img.ImageUrl).ToList()
                 };
 
-                return Ok(result);
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = result,
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
+
 
         [HttpGet("SearchProductsByName")]
         public async Task<IActionResult> SearchProductsByName([FromQuery] string name)
@@ -150,9 +192,15 @@ namespace MyStore.Web.APIControllers
                     orderBy: null,
                     includeProperties: q => q.Include(p => p.ProductImages)
                 );
+
                 if (products == null || !products.Any())
                 {
-                    return NotFound($"No active products found matching the name: {name}");
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = $"No active products found matching the name: {name}",
+                        StatusCode = 404
+                    });
                 }
 
                 var result = products.Select(p => new
@@ -168,11 +216,21 @@ namespace MyStore.Web.APIControllers
                     Images = p.ProductImages?.Select(img => img.ImageUrl).ToList()
                 });
 
-                return Ok(result);
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = result,
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -180,10 +238,34 @@ namespace MyStore.Web.APIControllers
         public async Task<IActionResult> CreateProduct([FromForm] CreateProductViewModel model)
         {
             if (model == null)
-                return BadRequest("Invalid data.");
+            {
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "Invalid data.",
+                    StatusCode = 400
+                });
+            }
 
             if (string.IsNullOrWhiteSpace(model.Name))
-                return BadRequest("Product name is required.");
+            {
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "Product name is required.",
+                    StatusCode = 400
+                });
+            }
+
+            if (model.Price < 1000)
+            {
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "Product price must be at least 1000.",
+                    StatusCode = 400
+                });
+            }
 
             try
             {
@@ -233,11 +315,21 @@ namespace MyStore.Web.APIControllers
                     await _productImageService.SaveChangesAsync();
                 }
 
-                return Ok(new { Message = "Product created successfully!", ProductId = product.ProductId });
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = new { Message = "Product created successfully!", ProductId = product.ProductId },
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -245,19 +337,48 @@ namespace MyStore.Web.APIControllers
         public async Task<IActionResult> UpdateProduct([FromRoute] Guid id, [FromForm] CreateProductViewModel model)
         {
             if (model == null)
-                return BadRequest("Invalid data.");
+            {
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "Invalid data.",
+                    StatusCode = 400
+                });
+            }
 
             if (string.IsNullOrWhiteSpace(model.Name))
-                return BadRequest("Product name is required.");
+            {
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "Product name is required.",
+                    StatusCode = 400
+                });
+            }
+
+            if (model.Price < 1000)
+            {
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "Product price must be at least 1000.",
+                    StatusCode = 400
+                });
+            }
 
             try
             {
-                // Lấy sản phẩm hiện tại
                 var product = await _productService.FindAsync(p => p.ProductId == id);
                 if (product == null)
-                    return NotFound("Product not found.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Product not found.",
+                        StatusCode = 404
+                    });
+                }
 
-                // Cập nhật thông tin sản phẩm
                 product.Name = model.Name;
                 product.Description = model.Description;
                 product.Price = model.Price;
@@ -267,14 +388,11 @@ namespace MyStore.Web.APIControllers
                 await _productService.UpdateAsync(product);
                 await _productService.SaveChangesAsync();
 
-                // Xử lý cập nhật hình ảnh (nếu có gửi lên)
                 if (model.Images != null && model.Images.Any())
                 {
-                    // Xóa toàn bộ ảnh cũ
                     var oldImages = await _productImageService.ListAsync(img => img.ProductID == product.ProductId);
                     foreach (var oldImg in oldImages)
                     {
-                        // Xóa file vật lý nếu tồn tại
                         var oldFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", oldImg.ImageUrl.TrimStart('/').Replace('/', Path.DirectorySeparatorChar));
                         if (System.IO.File.Exists(oldFilePath))
                         {
@@ -284,7 +402,6 @@ namespace MyStore.Web.APIControllers
                     }
                     await _productImageService.SaveChangesAsync();
 
-                    // Lưu các ảnh mới
                     var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
                     if (!Directory.Exists(uploadFolder))
                         Directory.CreateDirectory(uploadFolder);
@@ -314,11 +431,21 @@ namespace MyStore.Web.APIControllers
                     await _productImageService.SaveChangesAsync();
                 }
 
-                return Ok(new { Message = "Product updated successfully!", ProductId = product.ProductId });
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = new { Message = "Product updated successfully!", ProductId = product.ProductId },
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -329,24 +456,41 @@ namespace MyStore.Web.APIControllers
             {
                 var product = await _productService.FindAsync(p => p.ProductId == id);
                 if (product == null)
-                    return NotFound("Product not found.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Product not found.",
+                        StatusCode = 404
+                    });
+                }
 
                 product.IsActive = false;
-                product.StockQuantity = 0; // Set stock to 0 when hiding
+                product.StockQuantity = 0;
                 await _productService.UpdateAsync(product);
                 await _productService.SaveChangesAsync();
 
-                return Ok(new
+                return Ok(new ApiResponse<object>
                 {
-                    Message = "Product hide successfully!",
-                    ProductId = product.ProductId,
-                    IsActive = product.IsActive,
-                    StockQuantity = product.StockQuantity
+                    Success = true,
+                    Data = new
+                    {
+                        Message = "Product hide successfully!",
+                        ProductId = product.ProductId,
+                        IsActive = product.IsActive,
+                        StockQuantity = product.StockQuantity
+                    },
+                    StatusCode = 200
                 });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -357,18 +501,36 @@ namespace MyStore.Web.APIControllers
             {
                 var product = await _productService.FindAsync(p => p.ProductId == id);
                 if (product == null)
-                    return NotFound("Product not found.");
+                {
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = "Product not found.",
+                        StatusCode = 404
+                    });
+                }
 
                 product.IsActive = true;
                 await _productService.UpdateAsync(product);
                 await _productService.SaveChangesAsync();
 
-                return Ok(new { Message = "Product show successfully!", ProductId = product.ProductId, IsActive = product.IsActive });
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = new { Message = "Product show successfully!", ProductId = product.ProductId, IsActive = product.IsActive },
+                    StatusCode = 200
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
+
     }
 }

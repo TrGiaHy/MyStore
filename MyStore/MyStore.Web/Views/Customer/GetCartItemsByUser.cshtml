@@ -1,0 +1,249 @@
+﻿@using Repository.ViewModels
+@model List<CartItemViewModel>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>My Store</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/imgs/theme/favicon.svg" />
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/main.css?v=6.0" />
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/~/assets/prompt.js"></script>
+    @Html.Raw(" <link href='https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css' rel='stylesheet'>")
+
+    <link rel="stylesheet" href="~/assets/js/gridjs/theme/mermaid.min.css">
+</head>
+
+<body>
+    @await Html.PartialAsync("_Header")
+    <!--End header-->
+    <main class="main">
+        @* <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <span></span> Shop
+                    <span></span> Cart
+                </div>
+            </div>
+        </div> *@
+        <div class="container mb-80 mt-50">
+            <div class="row">
+                <div class="col-lg-8 mb-40">
+                    <h1 class="heading-2 mb-10">Your Cart</h1>
+                    <div class="d-flex justify-content-between">
+                        @{
+                            var countProducts = Model.Count;
+                        }
+                        <h6 class="text-body">There are <span class="text-brand">@countProducts</span> products in your cart</h6>
+                        <h6 class="text-body">
+                            <a href="#" class="text-muted">
+                                <i class="fi-rs-trash mr-5"></i>Clear
+                                Cart
+                            </a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="table-responsive shopping-summery">
+                        <table class="table table-wishlist">
+                            <thead>
+                                <tr class="main-heading">
+                                    <th class="custome-checkbox start pl-30">
+                                        <input class="form-check-input" type="checkbox" name="checkbox"
+                                               id="exampleCheckbox11" value="">
+                                        <label class="form-check-label" for="exampleCheckbox11"></label>
+                                    </th>
+                                    <th scope="col" colspan="2">Product</th>
+                                    <th scope="col">Unit Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Subtotal</th>
+                                    <th scope="col" class="end">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (!Model.Any())
+                                {
+                                    <tr>
+                                        <td colspan="7" class="text-center">Giỏ hàng trống</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr class="pt-30">
+                                            <td class="custome-checkbox pl-30">
+                                                <input class="form-check-input" type="checkbox" name="checkbox"
+                                                       id="exampleCheckbox1" value="@item.CartItemId">
+                                                <label class="form-check-label" for="exampleCheckbox1"></label>
+                                            </td>
+                                            <td class="image product-thumbnail pt-40">
+                                                @* <img src="assets/imgs/shop/product-1-1.jpg" alt="#"> *@
+                                                
+                                                <img src="@Url.Content(string.IsNullOrWhiteSpace(item.ProductImage) ? "~/assets/imgs/shop/product-5-1.jpg" : item.ProductImage)"
+     alt="@item.ProductName" width="80" />
+                                            </td>
+                                            <td class="product-des product-name">
+                                                <h6 class="mb-5">
+                                                    <a class="product-name mb-10 text-heading"
+                                                       href="">
+                                                        @item.ProductName
+                                                    </a>
+                                                </h6>
+                                                @* <div class="product-rate-cover">
+                                                    <div class="product-rate d-inline-block">
+                                                        <div class="product-rating" style="width:90%">
+                                                        </div>
+                                                    </div>
+                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                                </div> *@
+                                            </td>
+                                            <td class="price" data-title="Price">
+                                                <h4 class="text-body">@item.ProductPrice.ToString("#,0") VNĐ</h4>
+                                            </td>
+                                            <td class="text-center detail-info" data-title="Stock">
+                                                <div class="detail-extralink mr-15">
+                                                    <div class="detail-qty border radius">
+                                                        <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+                                                        <input type="text" name="quantity" class="qty-val" value="@item.Quantity" min="1">
+                                                        <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="price" data-title="Price">
+                                                <h4 class="text-brand">@((item.Quantity * item.ProductPrice).ToString("#,0")) VNĐ</h4>
+                                            </td>
+                                            <td class="action text-center" data-title="Remove">
+                                                <a href="#" class="text-body">
+                                                    <i class="fi-rs-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="divider-2 mb-30"></div>
+                    <div class="cart-action d-flex justify-content-between">
+                        <a class="btn "><i class="fi-rs-arrow-left mr-10"></i>Continue Shopping</a>
+                        <a class="btn  mr-10 mb-sm-15"><i class="fi-rs-refresh mr-10"></i>Update Cart</a>
+                    </div>
+                   
+                </div>
+                <div class="col-lg-4">
+                    <div class="border p-md-4 cart-totals ml-30">
+                        <div class="table-responsive">
+                            <table class="table no-border">
+                                @{
+                                    var subtotal = Model.Sum(item => item.Quantity * item.ProductPrice);
+                                    var shipping = 0;
+                                    var total = subtotal + shipping;
+                                }
+                                <tbody>
+                                    <tr>
+                                        <td class="cart_total_label">
+                                            <h6 class="text-muted">Subtotal</h6>
+                                        </td>
+                                        <td class="cart_total_amount">
+                                            <h4 class="text-brand text-end">@subtotal.ToString("#,0") VNĐ</h4>
+                                        </td>
+                                    </tr>
+                                    @* <tr>
+                                        <td scope="col" colspan="2">
+                                            <div class="divider-2 mt-10 mb-10"></div>
+                                        </td>
+                                    </tr> *@
+                                    <tr>
+                                        <td class="cart_total_label">
+                                            <h6 class="text-muted">Shipping</h6>
+                                        </td>
+                                        <td class="cart_total_amount">
+                                            <h4 class="text-heading text-end">Free</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cart_total_label">
+                                            <h6 class="text-muted">Estimate for</h6>
+                                        </td>
+                                        <td class="cart_total_amount">
+                                            <h4 class="text-heading text-end">Việt Nam</h4></td>
+                                    </tr>
+                                    @* <tr>
+                                        <td scope="col" colspan="2">
+                                            <div class="divider-2 mt-10 mb-10"></div>
+                                        </td>
+                                    </tr> *@
+                                    <tr>
+                                        <td class="cart_total_label">
+                                            <h6 class="text-muted">Total</h6>
+                                        </td>
+                                        <td class="cart_total_amount">
+                                            <h4 class="text-brand text-end">@total.ToString("#,0") VNĐ</h4>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="#" class="btn mb-20 w-100">Proceed To CheckOut<i class="fi-rs-sign-out ml-15"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    @await Html.PartialAsync("_Footer_User")
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <img src="assets/imgs/theme/loading.gif" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor JS-->
+    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="~/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/plugins/slick.js"></script>
+    <script src="~/assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="~/assets/js/plugins/wow.js"></script>
+    <script src="~/assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="~/assets/js/plugins/magnific-popup.js"></script>
+    <script src="~/assets/js/plugins/select2.min.js"></script>
+    <script src="~/assets/js/plugins/waypoints.js"></script>
+    <script src="~/assets/js/plugins/counterup.js"></script>
+    <script src="~/assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="~/assets/js/plugins/images-loaded.js"></script>
+    <script src="~/assets/js/plugins/isotope.js"></script>
+    <script src="~/assets/js/plugins/scrollup.js"></script>
+    <script src="~/assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="~/assets/js/plugins/jquery.theia.sticky.js"></script>
+    <script src="~/assets/js/plugins/jquery.elevatezoom.js"></script>
+    <!-- Template  JS -->
+    <script src="~/assets/js/main.js?v=6.0"></script>
+    <script src="~/assets/js/shop.js?v=6.0"></script>
+</body>
+
+</html>

@@ -9,6 +9,7 @@ namespace Model
         public Guid ProductId { get; set; } = Guid.NewGuid();
         public string Name { get; set; }
         public string Description { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
         public int StockQuantity { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;

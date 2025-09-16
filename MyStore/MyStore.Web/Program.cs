@@ -1,5 +1,4 @@
 ﻿using BusinessLogic.Config;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Model;
@@ -62,8 +61,8 @@ builder.Services.Configure<IdentityOptions>(options =>
 // Cấu hình Cookie
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/Customer/Login";
-    options.LogoutPath = "/Customer/Logout";
+    options.LoginPath = "/Authentication/Login";
+    options.LogoutPath = "/Authentication/Logout";
     options.AccessDeniedPath = "/Error/404";
     options.ReturnUrlParameter = "ReturnUrl";
     options.ExpireTimeSpan = TimeSpan.FromDays(14);
@@ -71,20 +70,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 });
 
-//Add Authentication
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddCookie(options =>
-{
-    options.LoginPath = "/Customer/Login";
-    options.LogoutPath = "/Customer/Logout";
-    options.AccessDeniedPath = "/Error/404";
-    options.ExpireTimeSpan = TimeSpan.FromDays(14);
-    options.SlidingExpiration = true;
-});
 
 
 builder.Services.ConfigureJwtAuthentication(builder.Configuration);
@@ -118,7 +103,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseSession();
 // Map Controllers
 app.MapControllers();
 //app.UseSwagger();

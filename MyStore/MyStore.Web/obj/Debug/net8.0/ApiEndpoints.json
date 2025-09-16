@@ -507,5 +507,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyStore.Web.Controllers.CustomerController",
+    "Method": "GetCartItemsByUser",
+    "RelativePath": "Customer/GetCartItemsByUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyStore.Web.Controllers.CustomerController",
+    "Method": "ProductDetail",
+    "RelativePath": "Customer/ProductDetail/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

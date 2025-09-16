@@ -374,6 +374,41 @@
         }
       }
     },
+    "/Customer/ProductDetail/{id}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Customer/GetCartItemsByUser": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Orders/GetOrderHistoryByUser/{userId}": {
       "get": {
         "tags": [
@@ -904,15 +939,19 @@
         "additionalProperties": false
       },
       "LoginViewModel": {
+        "required": [
+          "password",
+          "username"
+        ],
         "type": "object",
         "properties": {
           "username": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "password": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false

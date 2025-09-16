@@ -565,7 +565,6 @@ D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\staticwebassets.build.json
 D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\staticwebassets.development.json
 D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\MyStore..0967E549.Up2Date
 D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\MyStore.Web.dll
 D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\refint\MyStore.Web.dll
@@ -575,3 +574,4 @@ D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\ref\MyStore.Web.dll
 D:\MyStore\MyStore\MyStore.Web\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll
 D:\MyStore\MyStore\MyStore.Web\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\MyStore\MyStore\MyStore.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\MyStore\MyStore\MyStore.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

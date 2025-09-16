@@ -9,7 +9,7 @@
         <div class="product-cart-wrap mb-30">
             <div class="product-img-action-wrap">
                 <div class="product-img product-img-zoom">
-                    <a href="shop-product-right.html">
+                    <a href="/Customer/ProductDetail/@product.ProductId">
                         <img class="default-img" src="@(product.Images?.FirstOrDefault() ?? "/assets/imgs/shop/product-5-1.jpg")" />
 
                         @* <img class="hover-img" src="~/assets/imgs/shop/product-1-2.jpg" alt="" /> *@
@@ -31,7 +31,7 @@
             <div class="product-content-wrap">
                 <h2>
                     @* <a href="@Url.Action("ProductDetail", "Home", new { id = product.ID })"> *@
-                    <a>
+                    <a href="/Customer/ProductDetail/@product.ProductId">
                         @product.Name
                     </a>
                 </h2>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="product-card-bottom">
                     <div class="product-price">
-                        <span>@product.Price</span>
+                        <span>@product.Price VNĐ</span>
                         @* <span class="old-price">$32.8</span> *@
                     </div>
                 </div>
@@ -67,7 +67,7 @@
 
                     <div class="add-cart">
                         @* <a class="add" href="@Url.Action("ProductDetail", "Home", new { id = product.ID })"> *@
-                        <a class="add">
+                        <a class="add" href="/Customer/ProductDetail/@product.ProductId">
                             <i class="fi-rs-shopping-cart mr-5"></i>View Detail
                         </a>
                     </div>

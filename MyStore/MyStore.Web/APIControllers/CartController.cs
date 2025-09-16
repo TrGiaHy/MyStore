@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Model;
 using Repository.ViewModels;
+using static BusinessLogic.Services.ApiClientService.ApiClientService;
 
 namespace MyStore.Web.APIControllers
 {
@@ -31,34 +32,53 @@ namespace MyStore.Web.APIControllers
         {
             if (request == null)
             {
-                return BadRequest("Request data is required.");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "Request data is required.",
+                    StatusCode = 400
+                });
             }
 
             if (request.Quantity <= 0)
             {
-                return BadRequest("Quantity must be greater than 0.");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "Quantity must be greater than 0.",
+                    StatusCode = 400
+                });
             }
 
             if (string.IsNullOrWhiteSpace(request.UserID))
             {
-                return BadRequest("UserID is required.");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "UserID is required.",
+                    StatusCode = 400
+                });
             }
 
-            // Kiểm tra sản phẩm tồn tại và còn active
             var product = await _productService.FindAsync(
                 p => p.ProductId == request.ProductId && p.IsActive
             );
+
             if (product == null)
             {
-                return NotFound("Product not found or inactive.");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = "Product not found or inactive.",
+                    StatusCode = 404
+                });
             }
 
             try
             {
-                // Lấy cart của user, bao gồm CartItems
+                // Lấy cart của user
                 var cart = (await _shoppingCartService.ListAsync(
                     filter: c => c.UserID == request.UserID,
-                    orderBy: null,
                     includeProperties: q => q.Include(c => c.CartItems)
                 )).FirstOrDefault();
 
@@ -74,145 +94,139 @@ namespace MyStore.Web.APIControllers
                     await _shoppingCartService.SaveChangesAsync();
                 }
 
-                // Kiểm tra sản phẩm đã có trong giỏ chưa
+                // Kiểm tra sản phẩm trong giỏ
                 var cartItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == request.ProductId);
-                int newQuantity = request.Quantity;
-                if (cartItem != null)
-                {
-                    newQuantity = cartItem.Quantity + request.Quantity;
-                }
+                int newQuantity = cartItem?.Quantity + request.Quantity ?? request.Quantity;
 
-                // Kiểm tra tổng số lượng không vượt quá tồn kho
+                // Kiểm tra tồn kho
                 if (newQuantity > product.StockQuantity)
                 {
-                    return BadRequest($"Cannot add to cart. Total quantity ({newQuantity}) exceeds product stock ({product.StockQuantity}).");
+                    return Ok(new ApiResponse<string>
+                    {
+                        Success = false,
+                        ErrorMessage = $"Cannot add to cart. Total quantity {newQuantity} exceeds product stock {product.StockQuantity}.",
+                        StatusCode = 400
+                    });
                 }
 
                 if (cartItem != null)
                 {
                     cartItem.Quantity = newQuantity;
                     await _cartItemService.UpdateAsync(cartItem);
-                    await _shoppingCartService.SaveChangesAsync();
                 }
                 else
                 {
-                    cartItem = new CartItems
+                    await _cartItemService.AddAsync(new CartItems
                     {
                         CartItemId = Guid.NewGuid(),
                         CartId = cart.ID,
                         ProductId = request.ProductId,
-                        Quantity = request.Quantity,
-                    };
-                    await _cartItemService.AddAsync(cartItem);
-                    await _shoppingCartService.SaveChangesAsync();
+                        Quantity = request.Quantity
+                    });
                 }
 
-                // Sau khi add/update cartItem
-                var totalItems = (await _cartItemService.ListAsync(filter: ci => ci.CartId == cart.ID)).Sum(ci => ci.Quantity);
-
-                await _shoppingCartService.UpdateAsync(cart);
                 await _shoppingCartService.SaveChangesAsync();
 
-                return Ok(new
+                var totalItems = (await _cartItemService.ListAsync(ci => ci.CartId == cart.ID))
+                    .Sum(ci => ci.Quantity);
+
+                return Ok(new ApiResponse<object>
                 {
-                    Message = "Product added to cart successfully.",
-                    CartId = cart.ID,
-                    TotalItems = totalItems
+                    Success = true,
+                    Data = new
+                    {
+                        Message = "Product added to cart successfully.",
+                        CartId = cart.ID,
+                        TotalItems = totalItems
+                    },
+                    StatusCode = 200,
+                    Username = request.UserID
                 });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
+
         [HttpDelete("RemoveFromCart")]
         public async Task<IActionResult> RemoveFromCart([FromBody] RemoveFromCartViewModel request)
         {
             if (request == null)
-            {
-                return BadRequest("Request data is required.");
-            }
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Request data is required.", StatusCode = 400 });
 
             if (string.IsNullOrWhiteSpace(request.UserID))
-            {
-                return BadRequest("UserID is required.");
-            }
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "UserID is required.", StatusCode = 400 });
 
             try
             {
-                // Lấy cart của user, bao gồm CartItems
                 var cart = (await _shoppingCartService.ListAsync(
                     filter: c => c.UserID == request.UserID,
-                    orderBy: null,
                     includeProperties: q => q.Include(c => c.CartItems)
                 )).FirstOrDefault();
 
                 if (cart == null)
-                {
-                    return NotFound("Cart not found for this user.");
-                }
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Cart not found for this user.", StatusCode = 404 });
 
-                // Tìm sản phẩm trong cart
                 var cartItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == request.ProductId);
                 if (cartItem == null)
-                {
-                    return NotFound("Product not found in cart.");
-                }
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Product not found in cart.", StatusCode = 404 });
 
-                // Xóa cartItem
                 await _cartItemService.DeleteAsync(cartItem);
-                cart.CartItems.Remove(cartItem); // 🔑 bắt buộc
+                cart.CartItems.Remove(cartItem);
 
-                // Cập nhật lại tổng số lượng
-                var totalItems = (await _cartItemService.ListAsync(
-                    filter: ci => ci.CartId == cart.ID
-                )).Sum(ci => ci.Quantity);
-
+                var totalItems = (await _cartItemService.ListAsync(ci => ci.CartId == cart.ID)).Sum(ci => ci.Quantity);
 
                 await _shoppingCartService.UpdateAsync(cart);
                 await _shoppingCartService.SaveChangesAsync();
 
-                return Ok(new
+                return Ok(new ApiResponse<object>
                 {
-                    Message = "Product removed from cart successfully.",
-                    CartId = cart.ID,
-                    TotalItems = totalItems
+                    Success = true,
+                    Data = new { Message = "Product removed from cart successfully.", CartId = cart.ID, TotalItems = totalItems },
+                    StatusCode = 200,
+                    Username = request.UserID
                 });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
+
         [HttpGet("GetCartItemsByUser")]
         public async Task<IActionResult> GetCartItemsByUser([FromQuery] string userId)
         {
             if (string.IsNullOrWhiteSpace(userId))
-                return BadRequest("UserID is required.");
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "UserID is required.", StatusCode = 400 });
 
             try
             {
-                // Kiểm tra userId có tồn tại không
                 var user = await _userManager.FindByIdAsync(userId);
                 if (user == null)
-                    return NotFound("User does not exist.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "User does not exist.", StatusCode = 404 });
 
-                // Lấy cart của user, bao gồm CartItems và Product
                 var cart = (await _shoppingCartService.ListAsync(
                     filter: c => c.UserID == userId,
-                    orderBy: null,
-                    includeProperties: q => q
-                        .Include(c => c.CartItems)
-                            .ThenInclude(ci => ci.Product)
+                    includeProperties: q => q.Include(c => c.CartItems).ThenInclude(ci => ci.Product)
                 )).FirstOrDefault();
 
                 if (cart == null)
-                    return NotFound("Cart not found for this user.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Cart not found for this user.", StatusCode = 404 });
 
                 if (cart.CartItems == null || !cart.CartItems.Any())
-                    return NotFound("Cart does not contain any items.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Cart does not contain any items.", StatusCode = 404 });
 
-                // Lọc chỉ sản phẩm còn hoạt động (không bị xóa)
                 var result = cart.CartItems
                     .Where(ci => ci.Product != null && ci.Product.IsActive)
                     .Select(ci => new
@@ -220,19 +234,30 @@ namespace MyStore.Web.APIControllers
                         ci.ProductId,
                         ProductName = ci.Product.Name,
                         ProductDescription = ci.Product.Description,
-                        ProductPrice = ci.Product.Price,
+                        ProductPrice = Math.Round(ci.Product.Price, 0, MidpointRounding.AwayFromZero),
                         ci.Quantity
                     })
                     .ToList();
 
                 if (!result.Any())
-                    return NotFound("All products in cart are deleted or inactive.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "All products in cart are deleted or inactive.", StatusCode = 404 });
 
-                return Ok(result);
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Data = result,
+                    StatusCode = 200,
+                    Username = userId
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -240,46 +265,41 @@ namespace MyStore.Web.APIControllers
         public async Task<IActionResult> UpdateCartItemQuantity([FromBody] UpdateCartItemQuantityViewModel request)
         {
             if (request == null)
-                return BadRequest("Request data is required.");
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Request data is required.", StatusCode = 400 });
 
             if (string.IsNullOrWhiteSpace(request.UserID))
-                return BadRequest("UserID is required.");
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "UserID is required.", StatusCode = 400 });
 
             if (request.Quantity < 0)
-                return BadRequest("Quantity must be >= 0.");
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Quantity must be >= 0.", StatusCode = 400 });
 
             try
             {
-                // Kiểm tra user tồn tại
                 var user = await _userManager.FindByIdAsync(request.UserID);
                 if (user == null)
-                    return NotFound("User does not exist.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "User does not exist.", StatusCode = 404 });
 
-                // Kiểm tra sản phẩm còn active
                 var product = await _productService.FindAsync(p => p.ProductId == request.ProductId && p.IsActive);
                 if (product == null)
-                    return NotFound("Product not found or inactive.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Product not found or inactive.", StatusCode = 404 });
 
-                // Lấy cart của user, bao gồm CartItems
                 var cart = (await _shoppingCartService.ListAsync(
                     filter: c => c.UserID == request.UserID,
-                    orderBy: null,
                     includeProperties: q => q.Include(c => c.CartItems)
                 )).FirstOrDefault();
 
                 if (cart == null)
-                    return NotFound("Cart not found for this user.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Cart not found for this user.", StatusCode = 404 });
 
                 var cartItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == request.ProductId);
                 if (cartItem == null)
-                    return NotFound("Product not found in cart.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Product not found in cart.", StatusCode = 404 });
 
                 if (request.Quantity > product.StockQuantity)
-                    return BadRequest($"Cannot set quantity greater than product stock ({product.StockQuantity}).");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = $"Cannot set quantity greater than product stock ({product.StockQuantity}).", StatusCode = 400 });
 
                 if (request.Quantity == 0)
                 {
-                    // Nếu quantity = 0 thì xóa luôn cart item
                     await _cartItemService.DeleteAsync(cartItem);
                     cart.CartItems.Remove(cartItem);
                 }
@@ -292,17 +312,22 @@ namespace MyStore.Web.APIControllers
                 await _shoppingCartService.UpdateAsync(cart);
                 await _shoppingCartService.SaveChangesAsync();
 
-                return Ok(new
+                return Ok(new ApiResponse<object>
                 {
-                    Message = "Cart item updated successfully.",
-                    CartId = cart.ID,
-                    ProductId = cartItem.ProductId,
-                    Quantity = request.Quantity
+                    Success = true,
+                    Data = new { Message = "Cart item updated successfully.", CartId = cart.ID, ProductId = request.ProductId, Quantity = request.Quantity },
+                    StatusCode = 200,
+                    Username = request.UserID
                 });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
 
@@ -310,57 +335,51 @@ namespace MyStore.Web.APIControllers
         public async Task<IActionResult> Checkout([FromBody] CheckoutViewModel request)
         {
             if (request == null)
-                return BadRequest("Request data is required.");
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Request data is required.", StatusCode = 400 });
 
             if (string.IsNullOrWhiteSpace(request.UserId))
-                return BadRequest("UserID is required.");
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "UserID is required.", StatusCode = 400 });
 
             if (string.IsNullOrWhiteSpace(request.ShippingAddress))
-                return BadRequest("Shipping address is required.");
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Shipping address is required.", StatusCode = 400 });
 
             if (string.IsNullOrWhiteSpace(request.PaymentMethod))
-                return BadRequest("Payment method is required.");
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Payment method is required.", StatusCode = 400 });
 
             if (request.ProductIds == null || !request.ProductIds.Any())
-                return BadRequest("No products selected for checkout.");
+                return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "No products selected for checkout.", StatusCode = 400 });
 
             try
             {
-                // Lấy user
                 var user = await _userManager.FindByIdAsync(request.UserId);
                 if (user == null)
-                    return NotFound("User does not exist.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "User does not exist.", StatusCode = 404 });
 
-                // Lấy cart của user, bao gồm CartItems và Product
                 var cart = (await _shoppingCartService.ListAsync(
                     filter: c => c.UserID == request.UserId,
-                    orderBy: null,
-                    includeProperties: q => q
-                        .Include(c => c.CartItems)
-                            .ThenInclude(ci => ci.Product)
+                    includeProperties: q => q.Include(c => c.CartItems).ThenInclude(ci => ci.Product)
                 )).FirstOrDefault();
 
                 if (cart == null || cart.CartItems == null || !cart.CartItems.Any())
-                    return BadRequest("Cart is empty.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Cart is empty.", StatusCode = 400 });
 
-                // Lọc các cart item được chọn để checkout
-                var selectedCartItems = cart.CartItems
-                    .Where(ci => request.ProductIds.Contains(ci.ProductId))
-                    .ToList();
-
+                var selectedCartItems = cart.CartItems.Where(ci => request.ProductIds.Contains(ci.ProductId)).ToList();
                 if (!selectedCartItems.Any())
-                    return BadRequest("Selected products are not in the cart.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Selected products are not in the cart.", StatusCode = 400 });
 
-                // Kiểm tra tồn kho từng sản phẩm được chọn
                 foreach (var item in selectedCartItems)
                 {
                     if (item.Quantity > item.Product.StockQuantity)
                     {
-                        return BadRequest($"Product '{item.Product.Name}' does not have enough stock. Available: {item.Product.StockQuantity}, Requested: {item.Quantity}");
+                        return Ok(new ApiResponse<string>
+                        {
+                            Success = false,
+                            ErrorMessage = $"Product '{item.Product.Name}' does not have enough stock. Available: {item.Product.StockQuantity}, Requested: {item.Quantity}",
+                            StatusCode = 400
+                        });
                     }
                 }
 
-                // Tạo đơn hàng mới
                 var order = new Orders
                 {
                     OrderId = Guid.NewGuid(),
@@ -374,11 +393,9 @@ namespace MyStore.Web.APIControllers
 
                 foreach (var item in selectedCartItems)
                 {
-                    // Trừ tồn kho sản phẩm
                     item.Product.StockQuantity -= item.Quantity;
                     await _productService.UpdateAsync(item.Product);
 
-                    // Thêm vào OrderItems
                     order.OrderItems.Add(new OrderItems
                     {
                         OrderItemId = Guid.NewGuid(),
@@ -389,36 +406,38 @@ namespace MyStore.Web.APIControllers
                     });
                 }
 
-                // Lưu đơn hàng
                 var orderService = HttpContext.RequestServices.GetService(typeof(BusinessLogic.Services.Order.IOrderService)) as BusinessLogic.Services.Order.IOrderService;
                 if (orderService == null)
-                    return StatusCode(500, "Order service not available.");
+                    return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "Order service not available.", StatusCode = 500 });
 
                 await orderService.AddAsync(order);
                 await orderService.SaveChangesAsync();
 
-                // Xóa các cart item đã checkout khỏi cart
                 foreach (var item in selectedCartItems)
-                {
                     await _cartItemService.DeleteAsync(item);
-                }
+
                 await _shoppingCartService.UpdateAsync(cart);
                 await _shoppingCartService.SaveChangesAsync();
-
-                // Lưu thay đổi tồn kho
                 await _productService.SaveChangesAsync();
 
-                return Ok(new
+                return Ok(new ApiResponse<object>
                 {
-                    Message = "Checkout successful.",
-                    OrderId = order.OrderId,
-                    OrderDate = order.OrderDate
+                    Success = true,
+                    Data = new { Message = "Checkout successful.", OrderId = order.OrderId, OrderDate = order.OrderDate },
+                    StatusCode = 200,
+                    Username = request.UserId
                 });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return Ok(new ApiResponse<string>
+                {
+                    Success = false,
+                    ErrorMessage = $"Internal server error: {ex.Message}",
+                    StatusCode = 500
+                });
             }
         }
     }
 }
+
