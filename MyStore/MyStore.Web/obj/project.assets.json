@@ -14746,40 +14746,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/runner/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyStore\\MyStore\\MyStore.Web\\MyStore.Web.csproj",
+      "projectUniqueName": "/home/runner/work/MyStore/MyStore/MyStore/MyStore.Web/MyStore.Web.csproj",
       "projectName": "MyStore.Web",
-      "projectPath": "D:\\MyStore\\MyStore\\MyStore.Web\\MyStore.Web.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\MyStore\\MyStore\\MyStore.Web\\obj\\",
+      "projectPath": "/home/runner/work/MyStore/MyStore/MyStore/MyStore.Web/MyStore.Web.csproj",
+      "packagesPath": "/home/runner/.nuget/packages/",
+      "outputPath": "/home/runner/work/MyStore/MyStore/MyStore/MyStore.Web/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/runner/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\MyStore\\MyStore\\BsinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "D:\\MyStore\\MyStore\\BsinessLogic\\BusinessLogic.csproj"
+            "/home/runner/work/MyStore/MyStore/MyStore/BsinessLogic/BusinessLogic.csproj": {
+              "projectPath": "/home/runner/work/MyStore/MyStore/MyStore/BsinessLogic/BusinessLogic.csproj"
             }
           }
         }
@@ -14788,13 +14780,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -14910,7 +14896,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.119/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -14919,7 +14905,17 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "MyStore.Web depends on X.PagedList.Mvc.Core (>= 8.1.1) but X.PagedList.Mvc.Core 8.1.1 was not found. X.PagedList.Mvc.Core 8.4.0 was resolved instead.",
+      "message": "Repository depends on X.PagedList (>= 8.1.1) but X.PagedList 8.1.1 was not found. An approximate best match of X.PagedList 8.4.0 was resolved.",
+      "libraryId": "X.PagedList",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "MyStore.Web depends on X.PagedList.Mvc.Core (>= 8.1.1) but X.PagedList.Mvc.Core 8.1.1 was not found. An approximate best match of X.PagedList.Mvc.Core 8.4.0 was resolved.",
       "libraryId": "X.PagedList.Mvc.Core",
       "targetGraphs": [
         "net8.0"
