@@ -1,0 +1,134 @@
+@using Repository.ViewModels
+@model List<CartItemViewModel>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Checkout - My Store</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/imgs/theme/favicon.svg" />
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/main.css?v=6.0" />
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @Html.Raw(" <link href='https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css' rel='stylesheet'>")
+</head>
+
+<body>
+    @await Html.PartialAsync("_Header")
+    <!--End header-->
+    <main class="main">
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <span></span> <a href="/Customer/GetCartItemsByUser">Cart</a>
+                    <span></span> Checkout
+                </div>
+            </div>
+        </div>
+        <div class="container mb-80 mt-50">
+            <div class="row">
+                <div class="col-lg-8 mb-40">
+                    <h1 class="heading-2 mb-10">Checkout</h1>
+                    <div class="checkout-info">
+                        <div class="section-title">
+                            <h3 class="mb-30">Billing Details</h3>
+                        </div>
+                        <form id="checkoutForm">
+                            <div class="form-group">
+                                <label for="shippingAddress">Shipping Address <span class="required">*</span></label>
+                                <textarea id="shippingAddress" name="shippingAddress" class="form-control" rows="4" 
+                                         placeholder="Enter your full shipping address" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="paymentMethod">Payment Method <span class="required">*</span></label>
+                                <div class="payment-method">
+                                    <div class="sin-payment">
+                                        <input type="radio" name="payment_method" id="cod" value="COD" checked>
+                                        <label for="cod">Cash on Delivery (COD)</label>
+                                    </div>
+                                    <div class="sin-payment">
+                                        <input type="radio" name="payment_method" id="bank_transfer" value="Bank Transfer">
+                                        <label for="bank_transfer">Bank Transfer</label>
+                                    </div>
+                                    <div class="sin-payment">
+                                        <input type="radio" name="payment_method" id="credit_card" value="Credit Card">
+                                        <label for="credit_card">Credit Card</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="border p-md-4 cart-totals ml-30">
+                        <div class="heading_s1 mb-3">
+                            <h4>Your Order</h4>
+                        </div>
+                        <div class="table-responsive order_table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="selectedProducts">
+                                    <!-- Selected products will be populated here by JavaScript -->
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>SubTotal</th>
+                                        <td class="product-subtotal" id="subtotal">0 VNĐ</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Shipping</th>
+                                        <td>Free</td>
+                                    </tr>
+                                    <tr class="order_total">
+                                        <th>Total</th>
+                                        <td class="product-subtotal" id="total">0 VNĐ</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <button type="button" id="placeOrderBtn" class="btn btn-fill-out btn-block">
+                            Place Order <i class="fi-rs-box-check ml-15"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    @await Html.PartialAsync("_Footer_User")
+    
+    <!-- Store cart data and userId for JavaScript -->
+    <script type="text/javascript">
+        window.cartData = @Html.Raw(Json.Serialize(Model));
+        window.userId = '@ViewBag.UserId';
+    </script>
+    
+    <!-- Vendor JS-->
+    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="~/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <!-- Template  JS -->
+    <script src="~/assets/js/main.js?v=6.0"></script>
+    <script src="~/assets/js/checkout.js?v=1.0"></script>
+</body>
+
+</html>

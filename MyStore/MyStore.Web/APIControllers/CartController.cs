@@ -218,7 +218,9 @@ namespace MyStore.Web.APIControllers
 
                 var cart = (await _shoppingCartService.ListAsync(
                     filter: c => c.UserID == userId,
-                    includeProperties: q => q.Include(c => c.CartItems).ThenInclude(ci => ci.Product)
+                    includeProperties: q => q.Include(c => c.CartItems)
+                                            .ThenInclude(ci => ci.Product)
+                                            .ThenInclude(p => p.ProductImages)
                 )).FirstOrDefault();
 
                 if (cart == null)
@@ -229,20 +231,22 @@ namespace MyStore.Web.APIControllers
 
                 var result = cart.CartItems
                     .Where(ci => ci.Product != null && ci.Product.IsActive)
-                    .Select(ci => new
+                    .Select(ci => new CartItemViewModel
                     {
-                        ci.ProductId,
+                        CartItemId = ci.CartItemId,
+                        ProductId = ci.ProductId,
                         ProductName = ci.Product.Name,
                         ProductDescription = ci.Product.Description,
+                        ProductImage = ci.Product.ProductImages?.FirstOrDefault()?.ImageUrl ?? "",
                         ProductPrice = Math.Round(ci.Product.Price, 0, MidpointRounding.AwayFromZero),
-                        ci.Quantity
+                        Quantity = ci.Quantity
                     })
                     .ToList();
 
                 if (!result.Any())
                     return Ok(new ApiResponse<string> { Success = false, ErrorMessage = "All products in cart are deleted or inactive.", StatusCode = 404 });
 
-                return Ok(new ApiResponse<object>
+                return Ok(new ApiResponse<List<CartItemViewModel>>
                 {
                     Success = true,
                     Data = result,

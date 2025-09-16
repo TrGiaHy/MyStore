@@ -154,5 +154,60 @@ namespace MyStore.Web.Controllers
             });
         }
 
+        [HttpGet("Customer/Checkout")]
+        public async Task<IActionResult> Checkout()
+        {
+            try
+            {
+                // Lấy user đang đăng nhập
+                var user = await _userManager.GetUserAsync(User);
+                if (user == null)
+                    return RedirectToAction("Login", "Authentication");
+
+                // Lấy giỏ hàng để hiển thị tất cả sản phẩm
+                var cartResponse = await _apiClient.GetJsonAsync<List<CartItemViewModel>>(
+                    $"/api/Cart/GetCartItemsByUser?userId={user.Id}"
+                );
+
+                var cartItems = cartResponse.Success && cartResponse.Data != null
+                    ? cartResponse.Data
+                    : new List<CartItemViewModel>();
+
+                ViewBag.UserId = user.Id;
+                return View(cartItems);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View(new List<CartItemViewModel>());
+            }
+        }
+
+        [HttpPost("Customer/PlaceOrder")]
+        public async Task<IActionResult> PlaceOrder([FromBody] CheckoutViewModel request)
+        {
+            try
+            {
+                var user = await _userManager.GetUserAsync(User);
+                if (user == null)
+                    return Json(new { success = false, message = "User not authenticated" });
+
+                request.UserId = user.Id;
+
+                var apiResponse = await _apiClient.PostJsonAsync<object>("api/Cart/Checkout", request);
+
+                if (!apiResponse.Success)
+                {
+                    return Json(new { success = false, message = apiResponse.ErrorMessage });
+                }
+
+                return Json(new { success = true, message = "Order placed successfully!", data = apiResponse.Data });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = $"An error occurred: {ex.Message}" });
+            }
+        }
+
     }
 }
