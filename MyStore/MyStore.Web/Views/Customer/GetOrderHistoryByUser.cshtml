@@ -1,0 +1,246 @@
+﻿@model List<Repository.ViewModels.OrderSummaryViewModel>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My Store</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/imgs/theme/favicon.svg" />
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/main.css?v=6.0" />
+    <!-- Simple Notify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css" />
+
+    <!-- Simple Notify JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/~/assets/prompt.js"></script>
+    @Html.Raw(" <link href='https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css' rel='stylesheet'>")
+
+    <link rel="stylesheet" href="~/assets/js/gridjs/theme/mermaid.min.css">
+</head>
+<body>
+    @await Html.PartialAsync("_Header")
+    @Html.AntiForgeryToken()
+    <main class="main">
+        <div class="container mb-80 mt-50">
+            <div class="row">
+                <div class="col-lg-12 mb-30">
+                    <h1 class="heading-2">Your Orders</h1>
+                </div>
+            </div>
+
+            @if (Model == null || !Model.Any())
+            {
+                <div class="alert alert-info">You have no orders yet.</div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table" id="tbl-orders">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Payment</th>
+                                <th>Shipping Address</th>
+                                <th class="text-end">Items</th>
+                                <th class="text-end">Total</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var idx = 0;
+                            }
+                            @foreach (var o in Model)
+                            {
+                                idx++;
+                                <tr data-order-id="@o.OrderId">
+                                    <td>@idx</td>
+                                    <td>@o.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td class="order-status">@o.Status</td>
+                                    <td>@o.PaymentMethod</td>
+                                    <td>@o.ShippingAddress</td>
+                                    <td class="text-end">@o.TotalQuantity</td>
+                                    <td class="text-end">@o.TotalAmount.ToString("#,0") VNĐ</td>
+                                    <td>
+                                        <button type="button"
+                                                class="btn btn-sm btn-outline-primary btn-order-detail"
+                                                data-order-id="@o.OrderId"
+                                                data-order-status="@o.Status">
+                                            Detail
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </main>
+
+    <!-- Order Detail Modal -->
+    <div class="modal fade" id="orderDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Order products</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="odm-body">
+                    <div class="text-center py-4">Loading...</div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" id="btnCancelOrder" data-order-id="" disabled>Cancel Order</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_Footer_User")
+    <!-- Vendor JS-->
+    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="~/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/plugins/slick.js"></script>
+    <script src="~/assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="~/assets/js/plugins/wow.js"></script>
+    <script src="~/assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="~/assets/js/plugins/magnific-popup.js"></script>
+    <script src="~/assets/js/plugins/select2.min.js"></script>
+    <script src="~/assets/js/plugins/waypoints.js"></script>
+    <script src="~/assets/js/plugins/counterup.js"></script>
+    <script src="~/assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="~/assets/js/plugins/images-loaded.js"></script>
+    <script src="~/assets/js/plugins/isotope.js"></script>
+    <script src="~/assets/js/plugins/scrollup.js"></script>
+    <script src="~/assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="~/assets/js/plugins/jquery.theia.sticky.js"></script>
+    <script src="~/assets/js/plugins/jquery.elevatezoom.js"></script>
+    <!-- Template  JS -->
+    <script src="~/assets/js/main.js?v=6.0"></script>
+    <script src="~/assets/js/shop.js?v=6.0"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(function () {
+            // Open modal and load products
+            $(document).on('click', '.btn-order-detail', function () {
+                const orderId = $(this).data('order-id');
+                const status = ($(this).data('order-status') || '').toString().toLowerCase();
+
+                $('#orderDetailModal').modal('show');
+                $('#odm-body').html('<div class="text-center py-4">Loading...</div>');
+
+                // Enable cancel only if Pending
+                const canCancel = status === 'pending';
+                $('#btnCancelOrder')
+                    .prop('disabled', !canCancel)
+                    .data('order-id', orderId);
+
+                $.get('@Url.Action("GetOrderProducts", "Customer")', { orderId })
+                    .done(function (res) {
+                        if (!res || !res.success || !res.data) {
+                            $('#odm-body').html('<div class="alert alert-danger">Failed to load order products.</div>');
+                            return;
+                        }
+                        const data = res.data;
+                        const products = data.products || [];
+                        if (!products.length) {
+                            $('#odm-body').html('<div class="alert alert-info">No products found in this order.</div>');
+                            return;
+                        }
+                        let rows = products.map(p => `
+                            <tr>
+                                <td>${p.productName ?? ''}</td>
+                                <td class="text-end">${p.quantity}</td>
+                                <td class="text-end">${(p.unitPrice ?? 0).toLocaleString('vi-VN')} VNĐ</td>
+                                <td class="text-end">${(p.totalPrice ?? 0).toLocaleString('vi-VN')} VNĐ</td>
+                            </tr>`).join('');
+
+                        const html = `
+                            
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th class="text-end">Qty</th>
+                                            <th class="text-end">Unit Price</th>
+                                            <th class="text-end">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>${rows}</tbody>
+                                </table>
+                            </div>`;
+                        $('#odm-body').html(html);
+                    })
+                    .fail(function () {
+                        $('#odm-body').html('<div class="alert alert-danger">Error loading order products.</div>');
+                    });
+            });
+
+            // Cancel order
+            $('#btnCancelOrder').on('click', function () {
+                const orderId = $(this).data('order-id');
+                if (!orderId) return;
+
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Cancel this order?',
+                    text: 'This action cannot be undone.',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, cancel it',
+                    cancelButtonText: 'No',
+                }).then(result => {
+                    if (!result.isConfirmed) return;
+
+                    const token = $('input[name="__RequestVerificationToken"]').val();
+                    $.ajax({
+                        url: '@Url.Action("CancelOrder", "Customer")',
+                        type: 'POST',
+                        contentType: 'application/json; charset=utf-8',
+                        headers: { 'RequestVerificationToken': token },
+                        data: JSON.stringify({ orderId: orderId }),
+                        success: function (res) {
+                            if (res && res.success) {
+                                Swal.fire({ icon: 'success', title: 'Canceled', text: res.message, timer: 1500, showConfirmButton: false });
+                                // Update UI: set status to "Cancel by Customer"
+                                const row = $('#tbl-orders').find(`tr[data-order-id="${orderId}"]`);
+                                row.find('.order-status').text('Cancel by Customer');
+                                // Disable the cancel button in modal
+                                $('#btnCancelOrder').prop('disabled', true);
+                            } else {
+                                Swal.fire({ icon: 'error', title: 'Error', text: res?.message || 'Cancel failed.' });
+                            }
+                        },
+                        error: function (xhr) {
+                            const msg = (xhr.responseJSON && (xhr.responseJSON.message || xhr.responseJSON.error)) || xhr.responseText || 'An error occurred.';
+                            Swal.fire({ icon: 'error', title: 'Error', text: msg });
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

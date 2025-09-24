@@ -154,5 +154,131 @@ namespace MyStore.Web.Controllers
             });
         }
 
+        public class CheckoutClientModel
+        {
+            public string ShippingAddress { get; set; }
+            public string PaymentMethod { get; set; }
+            public List<Guid> ProductIds { get; set; }
+        }
+
+        [HttpPost("Customer/Checkout")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Checkout([FromBody] CheckoutClientModel client)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return Json(new { success = false, message = "Please login before checkout." });
+
+            if (client == null || client.ProductIds == null || !client.ProductIds.Any())
+                return Json(new { success = false, message = "No products selected for checkout." });
+
+            if (string.IsNullOrWhiteSpace(client.ShippingAddress))
+                return Json(new { success = false, message = "Shipping address is required." });
+
+            if (string.IsNullOrWhiteSpace(client.PaymentMethod))
+                return Json(new { success = false, message = "Payment method is required." });
+
+            var payload = new CheckoutViewModel
+            {
+                UserId = user.Id,
+                ShippingAddress = client.ShippingAddress,
+                PaymentMethod = client.PaymentMethod,
+                ProductIds = client.ProductIds
+            };
+
+            var apiResponse = await _apiClient.PostJsonAsync<object>("/api/Cart/Checkout", payload);
+
+            if (apiResponse == null)
+                return Json(new { success = false, message = "No response from API." });
+
+            if (!apiResponse.Success)
+                return Json(new { success = false, message = apiResponse.ErrorMessage });
+
+            return Json(new
+            {
+                success = true,
+                message = "Checkout successful.",
+                redirectUrl = Url.Action("GetOrderHistoryByUser", "Customer")
+            });
+        }
+
+
+        [HttpGet("Customer/GetOrderHistoryByUser")]
+        public async Task<IActionResult> GetOrderHistoryByUser(string id)
+        {
+            // Kiểm tra người dùng có đăng nhập hay không
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            var apiResponse = await _apiClient.GetJsonAsync<OrderHistoryResponse>(
+                $"/api/Orders/GetOrderHistoryByUser/{user.Id}"
+            );
+
+            var orders = (apiResponse.Success && apiResponse.Data?.Orders != null)
+                ? apiResponse.Data.Orders
+                : new List<OrderSummaryViewModel>();
+
+            return View("GetOrderHistoryByUser", orders);
+        }
+
+        [HttpGet("Customer/GetOrderProducts")]
+        public async Task<IActionResult> GetOrderProducts([FromQuery] Guid orderId)
+        {
+            if (orderId == Guid.Empty)
+                return Json(new { success = false, message = "Invalid order id." });
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return Json(new { success = false, message = "Please login." });
+
+            var apiResponse = await _apiClient.GetJsonAsync<OrderProductsResponse>(
+                $"/api/Orders/GetOrderProducts/{orderId}"
+            );
+
+            if (apiResponse == null || !apiResponse.Success || apiResponse.Data == null)
+                return Json(new { success = false, message = apiResponse?.ErrorMessage ?? "Failed to load order products." });
+
+            return Json(new { success = true, data = apiResponse.Data });
+        }
+
+        public class CancelOrderInput
+        {
+            public Guid OrderId { get; set; }
+        }
+
+        [HttpPost("Customer/CancelOrder")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CancelOrder([FromBody] CancelOrderInput input)
+        {
+            if (input == null || input.OrderId == Guid.Empty)
+                return Json(new { success = false, message = "Invalid order id." });
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return Json(new { success = false, message = "Please login." });
+
+            try
+            {
+                // API returns { Message, OrderId, Status } (not ApiResponse<T>), PatchAsync will deserialize to object on 2xx
+                var apiResult = await _apiClient.PatchAsync<object>($"/api/Orders/CancelOrder/{input.OrderId}", new { });
+                if (apiResult == null)
+                    return Json(new { success = false, message = "No response from API." });
+
+                return Json(new { success = true, message = "Order canceled successfully." });
+            }
+            catch (Exception ex)
+            {
+                // ApiClientService throws with "API error (StatusCode): content" on non-2xx
+                var msg = ex.Message
+                    .Replace("API error (BadRequest):", "", StringComparison.OrdinalIgnoreCase)
+                    .Replace("API error (Unauthorized):", "", StringComparison.OrdinalIgnoreCase)
+                    .Replace("API error (Forbidden):", "", StringComparison.OrdinalIgnoreCase)
+                    .Replace("API error (NotFound):", "", StringComparison.OrdinalIgnoreCase)
+                    .Trim();
+                return Json(new { success = false, message = msg });
+            }
+        }
     }
 }

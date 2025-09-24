@@ -28,7 +28,9 @@ namespace MyStore.Web.APIControllers
             {
                 var products = await _productService.ListAsync(
                     orderBy: null,
-                    includeProperties: q => q.Include(p => p.ProductImages)
+                    includeProperties: q => q
+                        .Include(p => p.ProductImages)
+                        .Include(p => p.Category)
                 );
 
                 if (products == null || !products.Any())
@@ -41,25 +43,26 @@ namespace MyStore.Web.APIControllers
                     });
                 }
 
-                var result = products.Select(p => new
+                var result = products.Select(p => new ProductViewModel
                 {
-                    p.ProductId,
-                    p.Name,
-                    p.Description,
+                    ProductId = p.ProductId,
+                    Name = p.Name,
+                    Description = p.Description,
                     Price = Math.Round(p.Price, 0),
-                    p.StockQuantity,
-                    p.CreatedDate,
-                    p.IsActive,
-                    p.CategoryID,
+                    StockQuantity = p.StockQuantity,
+                    CreatedDate = p.CreatedDate,
+                    IsActive = p.IsActive,
+                    CategoryName = p.Category != null ? p.Category.Name : null,
                     Images = p.ProductImages?.Select(img => img.ImageUrl).ToList()
-                });
+                }).ToList();
 
-                return Ok(new ApiResponse<object>
+                return Ok(new ApiResponse<List<ProductViewModel>>
                 {
                     Success = true,
                     Data = result,
                     StatusCode = 200
                 });
+
             }
             catch (Exception ex)
             {

@@ -67,9 +67,8 @@
                             <thead>
                                 <tr class="main-heading">
                                     <th class="custome-checkbox start pl-30">
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                               id="exampleCheckbox11" value="">
-                                        <label class="form-check-label" for="exampleCheckbox11"></label>
+                                        <input class="form-check-input" type="checkbox" id="select-all">
+                                        <label class="form-check-label" for="select-all"></label>
                                     </th>
                                     <th scope="col" colspan="2">Product</th>
                                     <th scope="col">Unit Price</th>
@@ -89,17 +88,16 @@
                                 {
                                     foreach (var item in Model)
                                     {
+                                        var checkboxId = $"cb_{item.ProductId}";
                                         <tr class="pt-30">
                                             <td class="custome-checkbox pl-30">
-                                                <input class="form-check-input" type="checkbox" name="checkbox"
-                                                       id="exampleCheckbox1" value="@item.CartItemId">
-                                                <label class="form-check-label" for="exampleCheckbox1"></label>
+                                                <input class="form-check-input js-cart-item" type="checkbox"
+                                                       id="@checkboxId" value="@item.ProductId">
+                                                <label class="form-check-label" for="@checkboxId"></label>
                                             </td>
                                             <td class="image product-thumbnail pt-40">
                                                 @* <img src="assets/imgs/shop/product-1-1.jpg" alt="#"> *@
-                                                
-                                                <img src="@Url.Content(string.IsNullOrWhiteSpace(item.ProductImage) ? "~/assets/imgs/shop/product-5-1.jpg" : item.ProductImage)"
-     alt="@item.ProductName" width="80" />
+                                                <img src="@Url.Content(string.IsNullOrWhiteSpace(item.ProductImage) ? "~/assets/imgs/shop/product-5-1.jpg" : item.ProductImage)" alt="@item.ProductName" width="80" />
                                             </td>
                                             <td class="product-des product-name">
                                                 <h6 class="mb-5">
@@ -204,7 +202,23 @@
                                 </tbody>
                             </table>
                         </div>
-                        <a href="#" class="btn mb-20 w-100">Proceed To CheckOut<i class="fi-rs-sign-out ml-15"></i></a>
+                        @Html.AntiForgeryToken()
+                        <div class="mb-3">
+                            <label class="form-label">Shipping address</label>
+                            <input type="text" class="form-control" id="shippingAddress" placeholder="Enter your address">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment method</label>
+                            <select id="paymentMethod" class="form-control">
+                                <option value="COD">COD (Cash on Delivery)</option>
+                                <option value="BankTransfer">Bank Transfer</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="btnCheckout" class="btn mb-20 w-100">
+                            Proceed To CheckOut <i class="fi-rs-sign-out ml-15"></i>
+                        </button>
+                        @* <a href="#" class="btn mb-20 w-100">Proceed To CheckOut<i class="fi-rs-sign-out ml-15"></i></a> *@
                     </div>
                 </div>
             </div>
@@ -247,3 +261,56 @@
 </body>
 
 </html>
+
+<script>
+    $(function () {
+        // Select/Deselect all
+        $('#select-all').on('change', function () {
+            $('.js-cart-item').prop('checked', this.checked);
+        });
+
+        $('#btnCheckout').on('click', function () {
+            const productIds = $('.js-cart-item:checked').map(function () { return $(this).val(); }).get();
+            if (!productIds.length) {
+                Swal.fire({ icon: 'warning', title: 'Warning', text: 'Please select at least one product.' });
+                return;
+            }
+            const shippingAddress = $('#shippingAddress').val().trim();
+            const paymentMethod = $('#paymentMethod').val();
+            if (!shippingAddress) {
+                Swal.fire({ icon: 'warning', title: 'Warning', text: 'Shipping address is required.' });
+                return;
+            }
+
+            const token = $('input[name="__RequestVerificationToken"]').val();
+
+            $.ajax({
+                url: '@Url.Action("Checkout", "Customer")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                headers: { 'RequestVerificationToken': token },
+                data: JSON.stringify({
+                    productIds: productIds,
+                    shippingAddress: shippingAddress,
+                    paymentMethod: paymentMethod
+                }),
+                success: function (res) {
+                    if (res && res.success) {
+                        Swal.fire({ icon: 'success', title: 'Success', text: res.message || 'Checkout successful.', timer: 1800, showConfirmButton: false })
+                            .then(() => {
+                                if (res.redirectUrl) window.location = res.redirectUrl;
+                                else location.reload();
+                            });
+                    } else {
+                        Swal.fire({ icon: 'error', title: 'Error', text: res?.message || 'Checkout failed.' });
+                    }
+                },
+                error: function (xhr) {
+                    let msg = (xhr.responseJSON && (xhr.responseJSON.message || xhr.responseJSON.error)) || xhr.responseText || 'An error occurred.';
+                    msg = msg.replace(/^API error\s*\(.*?\):\s*/i, '').replace(/\((\d+)\)/g, '$1').replace(/^"|"$/g, '');
+                    Swal.fire({ icon: 'error', title: 'Error', text: msg });
+                }
+            });
+        });
+    });
+</script>
